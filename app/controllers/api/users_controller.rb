@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-   before_action :ensure_current_user, only: {:update}
+   before_action :ensure_current_user, only: [:update]
     
     def create 
         @user = User.new(user_params)
