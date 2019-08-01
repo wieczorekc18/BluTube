@@ -49,7 +49,7 @@ class Signup extends React.Component {
     render() {
         return (
                 <div className="signup-form">
-                    <div className="blugle-signup-logo-container"><img className="blugle-logo" src="assets/blugle-logo" alt="blugle-logo" /></div>
+                <div className="blugle-signup-logo-container"><img className="blugle-logo" src={window.blugleLogoURL} alt="blugle-logo" /></div>
                     <h2 className="signup-message-h2">Create your Blugle Account</h2>
                     <h4 className="signup-message-h4">to continue to BluTube</h4>
                     <div className="auth-errors">{this.renderErrors()}</div>

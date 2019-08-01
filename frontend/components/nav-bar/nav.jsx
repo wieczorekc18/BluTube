@@ -17,7 +17,7 @@ class Navbar extends React.Component {
                     <li className="logged-left-nav-group">
                         <i className="fa fa-bars" aria-hidden="true"></i>
                         <Link className="blutube-logo-link" to="/">
-                            <img className="blutube-logo" src="assets/blutube-logo" alt="logo-here" />
+                            <img className="blutube-logo" src={window.blutubeLogoURL} alt="logo-here" />
                         </Link>
                     </li>
                     <li><input className="logged-search-bar" type="search" placeholder="search" name="" id="" /></li>
@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                         <li className="left-nav-group">
                             <i className="fa fa-bars" aria-hidden="true"></i>
                             <Link className="blutube-logo-link" to="/">
-                                <img className="blutube-logo" src="assets/blutube-logo" alt="logo-here" />
+                                <img className="blutube-logo" src={window.blutubeLogoURL} alt="logo-here" />
                             </Link>
                         </li>
                         <li><input className="search-bar" type="search" placeholder="search" name="" id="" /></li>
@@ -47,7 +47,7 @@ class Navbar extends React.Component {
                             <i className="fas fa-envelope-square" aria-hidden="true"></i>
                             <i className="fa fa-bell" aria-hidden="true"></i>
                             <Link className="sign-in-button" to="/login">
-                                <div className="dummy-user-icon-div"><img className="dummy-user-icon" src="assets/user-dummy.png" alt="user-icon" /></div>
+                                <div className="dummy-user-icon-div"><img className="dummy-user-icon" src={window.userDummyURL} alt="user-icon" /></div>
                                 <p className="sign-in-text">Sign In</p>
                             </Link>
                         </li>
