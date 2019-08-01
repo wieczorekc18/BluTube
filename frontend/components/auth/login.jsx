@@ -8,7 +8,6 @@ class Login extends React.Component {
             email: '',
             password: '',
             emailAccepted: false,
-            loginAccepted: false,
         };
 
         this.handleEmailSubmit = this.handleEmailSubmit.bind(this);

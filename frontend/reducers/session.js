@@ -10,7 +10,7 @@ const LoginReducer = (state = _nullUser, action) => {
         case CHECK_EMAIL:
             return Object.assign({}, {email: action.email})
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, { currentUser: action.currentUser });
+            return Object.assign({}, { currentUser: action.currentUser.extract });
         case LOGOUT_CURRENT_USER:
             return _nullUser
         default:

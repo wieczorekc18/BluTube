@@ -5,7 +5,6 @@ import NavBar from './nav';
 import { logout } from '../../actions/auth';
 
 const mapStateToProps = state => {
-    
     return{
     currentUser: state.session.currentUser,
     }

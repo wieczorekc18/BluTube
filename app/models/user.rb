@@ -9,19 +9,20 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  icon_color      :string
 #
 
 class User < ApplicationRecord
-    validates :email, :username, :session_token, uniqueness: true, presence: true
+    validates :email, :session_token, uniqueness: true, presence: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP}
-    validates :password_digest, presence: true 
+    validates :password_digest, :username, presence: true 
     validates :password, length: {minimum: 6, allow_nil: true}
 
 
 
 
 
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :assign_color
 
     attr_reader :password 
 
@@ -60,5 +61,24 @@ class User < ApplicationRecord
 
     def ensure_session_token
         self.session_token ||= User.generate_session_token
+    end
+
+    def assign_color
+        colors = [
+            '#800000',
+            '#9A6324',
+            '#808000',
+            '#469990',
+            '#000075',
+            '#e6194B',
+            '#f58231',
+            '#3cb44b',
+            '#42d4f4',
+            '#4363d8',
+            '#911eb4',
+            '#f032e6',
+            '#a9a9a9',
+        ]
+        self.icon_color ||= colors.sample
     end
 end

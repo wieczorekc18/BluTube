@@ -12,5 +12,13 @@ User.delete_all
 User.create!(
   username: 'hunter12',
   email: 'hunter12@gmail.com',
-  password: 'hunter12'
+  password: 'hunter12',
+  icon_color: '#42d4f4'
+)
+
+User.create!(
+  username: 'Demo',
+  email: 'demouser@gmail.com',
+  password: 'password123!',
+  icon_color: '#000000'
 )

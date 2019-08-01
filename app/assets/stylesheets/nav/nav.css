@@ -8,9 +8,24 @@
     align-items: center;
 }
 
+.logged-nav-elements {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .search-bar {
     width: 900%;
     margin-left: -100px;
+}
+
+.logged-search-bar {
+    width: 900%;
+    margin-left: -100px;
+    margin-top: -25px;
 }
 
 .right-nav-group {
@@ -22,6 +37,18 @@
 
 .right-nav-group i {
     margin-top: 14px;
+}
+
+.logged-right-nav-group {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-top: 14px;
+    
+}
+
+.logged-right-nav-group i {
+    margin-top: 10px;
 }
 
 .sign-in-button {
@@ -54,6 +81,12 @@
     align-items: center;
 }
 
+.logged-left-nav-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .blutube-logo {
     margin-left: 30px;
@@ -67,4 +100,16 @@
 
 }
 
+.user-icon {
+    color: black;
+    font-family: verdana, sans-serif;
+    font-size: 18px;
+    border-radius: 100px; 
+    padding: 5px 10px 5px 10px;
+    margin-top: 0px;
+    margin-right: 20px;
+}
 
+.hidden-logout {
+    height: 30px;
+}

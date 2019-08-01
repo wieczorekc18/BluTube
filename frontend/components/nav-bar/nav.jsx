@@ -1,48 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { runInThisContext } from 'vm';
 
-// const Navbar = ({ currentUser, logout }) => {
-//     const display = currentUser ? (
-//         <div>
-//             <p className="user-icon">{currentUser.username[0].toUpperCase()}</p>
-//             <button className="hidden-logout" onClick={logout}>Log Out</button>
-//         </div>
-//     ) : (
-//             <div>
-//                 <Link className="sign-in-button" to="/login">Sign In</Link>
-//             </div>
-//         );
-
-//     return (
-//         <header className="nav-bar">
-//             <h1 className="logo">BluTube</h1>
-//             <div>
-//                 {display}
-//             </div>
-//         </header>
-//     );
-// };
 
 class Navbar extends React.Component {
     constructor(props){
         super(props)
     }
 
+
     render(){
         const currentUser = this.props.currentUser;
         
         const display = currentUser ? (
             <div>
-                <ul className="nav-elements">
-                    <li className="left-nav-group">
+                <ul className="logged-nav-elements">
+                    <li className="logged-left-nav-group">
                         <i className="fa fa-bars" aria-hidden="true"></i>
                         <Link className="blutube-logo-link" to="/">
                             <img className="blutube-logo" src="assets/blutube-logo" alt="logo-here" />
                         </Link>
                     </li>
-                    <li><input className="search-bar" type="search" placeholder="search" name="" id="" /></li>
-                    <li className="right-nav-group">
+                    <li><input className="logged-search-bar" type="search" placeholder="search" name="" id="" /></li>
+                    <li className="logged-right-nav-group">
                         <i className="fas fa-video" aria-hidden="true"></i>
                         <i className="fa fa-th" aria-hidden="true"></i>
                         <i className="fas fa-envelope-square" aria-hidden="true"></i>
@@ -75,7 +54,7 @@ class Navbar extends React.Component {
                     </ul>
                 </div>
             );
-
+        
         return (
             <header className="nav-bar">
                 <div>

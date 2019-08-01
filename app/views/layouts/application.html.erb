@@ -7,6 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.brentURL = "<%= image_url('blugle-logo.png') %>"
+    </script>
+    <script type="text/javascript">
+      window.brentURL = "<%= image_url('blutube-logo.png') %>"
+    </script>
+    <script type="text/javascript">
+      window.brentURL = "<%= image_url('user-dummy.png') %>"
+    </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <% if logged_in? %>
       <script id="current-user" type="text/javascript">
