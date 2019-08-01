@@ -45,6 +45,10 @@ class Login extends React.Component {
             })
     }
 
+    emailRefresh(){
+
+    }
+
     renderErrors(){
         return (
             <ul>
@@ -60,17 +64,27 @@ class Login extends React.Component {
     render() {
         let display = this.state.emailAccepted ? (
             <div className="password-login-form">
-
+                <h2 className="pw-login-message-h2">Welcome</h2>
+                <div className="link-back-to-email-div">
+                    <Link className="link-back-to-email" to="/login" onClick={this.emailRefresh()}>
+                        <p className="email-display">
+                            <i className="fas fa-user"></i>
+                            {this.state.email}
+                        </p>
+                    </Link> 
+                </div>
                 <form>
-                    <label className="login-password-bar">Password:
+                    <label className="login-password-bar">
                         <input
+                            className="login-input"
+                            placeholder="Enter Your Password"
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                             />
                     </label>
                     <div className="auth-errors">{this.renderErrors()}</div>
-                    <button onClick={this.handleFullSubmit}>Sign In!</button>
+                    <button className="full-submit-button" onClick={this.handleFullSubmit}>Sign In!</button>
                 </form>
             </div>
         ) : (
@@ -82,7 +96,7 @@ class Login extends React.Component {
                     </div>
                     <label className="login-email-bar">
                         <input
-                                className="login-email-input"
+                                className="login-input"
                                 type="email"
                                 placeholder="Email"
                                 value={this.state.email}

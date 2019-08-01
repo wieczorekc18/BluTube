@@ -1,0 +1,89 @@
+
+.signup-form {
+    margin: 0 auto;
+    width: 750px;
+    height: 500px;
+    border: solid rgb(209, 205, 205) 2px;
+    padding: 48px 40px 36px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.signup-message-h2 {
+    font-family: Verdana, sans-serif;
+    font-weight: 100;
+}
+
+.signup-message-h4 {
+    font-family: Verdana, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.blugle-signup-logo-container{
+    width: 100%;
+}
+
+.name-signup-input {
+    width: 40%;
+    height: 20px;
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 15px;
+    border: 2px solid rgb(209, 205, 205);
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.name-signup-input:focus {
+    border: 2px solid rgb(28, 77, 236);
+    border-radius: 4px;
+}
+
+.email-signup-input {
+    width: 40%;
+    height: 20px;
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 15px;
+    border: 2px solid rgb(209, 205, 205);
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.email-signup-input:focus {
+    border: 2px solid rgb(28, 77, 236);
+    border-radius: 4px;
+}
+
+.pw-signup-input {
+    width: 40%;
+    height: 20px;
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 15px;
+    border: 2px solid rgb(209, 205, 205);
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.pw-signup-input:focus {
+    border: 2px solid rgb(28, 77, 236);
+    border-radius: 4px;
+}
+
+
+.signup-submit {
+    float: center;
+    background-color: rgb(28, 77, 236);
+    padding: 10px 30px 10px 30px;
+    color: white;
+    font-family: verdana, sans-serif;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: 10px;
+}

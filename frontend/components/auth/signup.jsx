@@ -48,37 +48,45 @@ class Signup extends React.Component {
 
     render() {
         return (
-            <div className="auth-form">
-                <div className="blugle-logo-container"><img className="blugle-logo" src="assets/blugle-logo" alt="blugle-logo" /></div>
                 <div className="signup-form">
-                    <h2>Sign Up!</h2>
+                    <div className="blugle-signup-logo-container"><img className="blugle-logo" src="assets/blugle-logo" alt="blugle-logo" /></div>
+                    <h2 className="signup-message-h2">Create your Blugle Account</h2>
+                    <h4 className="signup-message-h4">to continue to BluTube</h4>
                     <form>
                         {this.renderErrors()}
-                        <label>Name:
+                        <label>
                             <input
+                                className="name-signup-input"
                                 type="text"
+                                placeholder="Name"
                                 value={this.state.username}
                                 onChange={this.handleInput('username')}
                             />
                         </label>
-                        <label>Email:
+                        <br/>
+                        <label>
                             <input
+                                className="email-signup-input"
+                                placeholder="Your Email Address"
                                 type="text"
                                 value={this.state.email}
                                 onChange={this.handleInput('email')}
                             />
                         </label>
-                        <label>Password:
+                        <br/>
+                        <label>
                             <input
                                 type="password"
+                                className="pw-signup-input"
+                                placeholder="Password"
                                 value={this.state.password}
                                 onChange={this.handleInput('password')}
                             />
-                            <button onClick={this.handleSubmit}>Sign Up!</button>
+                            <br/>
+                            <button className="signup-submit" onClick={this.handleSubmit}>Sign Up!</button>
                         </label>
                     </form>
                 </div>
-            </div>
         );
     }
 }
