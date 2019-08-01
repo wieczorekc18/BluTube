@@ -118,7 +118,7 @@ class Login extends React.Component {
         
         return (
             <div className="auth-form">
-                <div className="blugle-logo-container"><img className="blugle-logo" src={window.blugleLogoUrL} alt="blugle-logo" /></div>
+                <div className="blugle-logo-container"><img className="blugle-logo" src={window.blugleLogoURL} alt="blugle-logo" /></div>
                 {display}
             </div>
         );
