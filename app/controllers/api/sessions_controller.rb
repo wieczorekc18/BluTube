@@ -1,21 +1,25 @@
 class Api::SessionsController < ApplicationController
-    def new
-        
-    end
-
     def create
-        email = User.find_by_email(params[:user][:email])
-        render json: {message: 'Invalid Email'} unless email
-        @user = User.find_by_credentials(email, params[:user][:password])
+        @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user 
             login!(@user)
+            render 'api/users/show'
         else  
-            render json: {message: ''}
+            render json: ['Wrong password. Try again.'], status: 422
+        end
+    end
+
+    def check_email
+        @email = params[:email][:email]
+        user = User.find_by(email: @email)
+        if user 
+            render json: ['valid email']
+        else  
+            render json: ['Enter a valid email'], status: 422
         end
     end
 
     def destroy
         logout!
-        render 'api/videos/index'
     end
 end

@@ -10,10 +10,22 @@ export const postUser = (user) => (
 export const postSession = (user) => (
     $.ajax({
         method: "POST",
-        url: "api/session",
+        url: "/api/session",
         data: {user}
     })
 )
+
+export const checkEmail = (email) => {
+    
+    return(
+        $.ajax({
+            method: "GET",
+            url: "/api/session/check_email",
+            data: { email }
+        })
+    )
+}
+
 
 export const deleteSession = () => (
     $.ajax({

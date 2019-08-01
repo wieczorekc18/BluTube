@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     resources :users
 
     resource :session, only: [:create, :destroy]
+
+    get '/session/check_email', :to => 'sessions#check_email', :defaults => { :format => 'json' }
   end
+
+
 end
