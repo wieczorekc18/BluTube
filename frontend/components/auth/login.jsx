@@ -12,6 +12,7 @@ class Login extends React.Component {
 
         this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
         this.handleFullSubmit = this.handleFullSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this)
     }
 
     handleInput(type) {
@@ -48,12 +49,24 @@ class Login extends React.Component {
 
     }
 
+    demoLogin(e){
+        e.preventDefault
+        this.setState({
+            email: "demouser@gmail.com",
+            password: "password123!",
+            emailAccepted: true,
+        })
+        this.checkEmail(this.state)
+            .then(this.props.login(this.state))
+        
+    }
+
     renderErrors(){
         return (
-            <ul>
+            <ul className="errors-list">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
+                    <li className="error" key={`error-${i}`}>
+                        <p className="red-exclamation">!</p><p className="error-text">{error}</p>
                     </li>
                 ))}
             </ul>
@@ -104,8 +117,8 @@ class Login extends React.Component {
                         <div className="auth-errors">{this.renderErrors()}</div>
                     </label>
                     <p className="demo-link-section">
-                        Not your computer? Log in as a Demo User: <br/> <Link className="demo-link" to="/">Demo User</Link>
-                    </p>
+                        Not your computer? Log in as a Demo User: <br/> <button onClick={this.demoLogin} className="demo-link" to="/">Demo User</button>
+                    </p> 
                     <button className="next-button" onClick={this.handleEmailSubmit}>Next</button>
                 </form>
 

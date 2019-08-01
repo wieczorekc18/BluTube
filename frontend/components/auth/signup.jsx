@@ -36,10 +36,10 @@ class Signup extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="errors-list">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
+                    <li className="error" key={`error-${i}`}>
+                        <p className="red-exclamation">!</p><p className="error-text">{error}</p>
                     </li>
                 ))}
             </ul>

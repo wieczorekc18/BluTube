@@ -26,8 +26,10 @@ class Navbar extends React.Component {
                         <i className="fa fa-th" aria-hidden="true"></i>
                         <i className="fas fa-envelope-square" aria-hidden="true"></i>
                         <i className="fa fa-bell" aria-hidden="true"></i>
-                        <p className="user-icon">{currentUser.username[0].toUpperCase()}</p>
-                        <button className="hidden-logout" onClick={this.props.logout}>Log Out</button>
+                        <p className="user-icon">{currentUser.username[0].toUpperCase()}
+                        </p> 
+                            <button className="hidden-logout logout-dropdown" onClick={this.props.logout}>Log Out</button>
+
                     </li>
                 </ul>
             </div>
