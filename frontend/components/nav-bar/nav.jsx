@@ -40,7 +40,10 @@ class Navbar extends React.Component {
                         {currentUser.email}
                     </div>
                 </li>
-                <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
+                <li className="logout-li" onClick={this.props.logout}>
+                    <i className="fas fa-sign-out-alt"></i>
+                    Sign out
+                </li>
             </ul>
         ):(
             null

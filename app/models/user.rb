@@ -13,9 +13,9 @@
 #
 
 class User < ApplicationRecord
+    validates :password_digest, :username, presence: true 
     validates :email, :session_token, uniqueness: true, presence: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP}
-    validates :password_digest, :username, presence: true 
     validates :password, length: {minimum: 6, allow_nil: true}
 
 

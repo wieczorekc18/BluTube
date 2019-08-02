@@ -8,6 +8,7 @@
 
 
 User.delete_all
+Video.delete_all
 
 User.create!(
   username: 'hunter12',
@@ -21,4 +22,10 @@ User.create!(
   email: 'demouser@gmail.com',
   password: 'password123!',
   icon_color: '#000000'
+)
+
+Video.create!(
+  title: "Duck Sauce",
+  uploader_id: "1",
+  
 )
