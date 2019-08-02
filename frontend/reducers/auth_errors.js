@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, CHECK_EMAIL, RECEIVE_ERRORS } from "../actions/auth"
+import { RECEIVE_CURRENT_USER, CHECK_EMAIL, RECEIVE_ERRORS, CLEAR_ERRORS } from "../actions/auth"
 
 const ErrorsReducer = (state = [], action) => {
     Object.freeze(state);
@@ -6,6 +6,8 @@ const ErrorsReducer = (state = [], action) => {
         case RECEIVE_ERRORS:
             return (action.errors)
         case CHECK_EMAIL:
+            return [];
+        case CLEAR_ERRORS:
             return [];
         case RECEIVE_CURRENT_USER:
             return [];

@@ -87,3 +87,8 @@
     border-radius: 6px;
     margin-top: 10px;
 }
+
+.signup-errors {
+    float: right;
+    margin-top: -150px;
+}

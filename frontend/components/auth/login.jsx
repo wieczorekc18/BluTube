@@ -50,22 +50,24 @@ class Login extends React.Component {
     }
 
     demoLogin(e){
-        e.preventDefault
+        e.preventDefault()
         this.setState({
             email: "demouser@gmail.com",
             password: "password123!",
             emailAccepted: true,
         })
-        this.checkEmail(this.state)
-            .then(this.props.login(this.state))
-        
+        this.props.clearErrors()
+    }
+
+    componentWillUnmount(){
+        this.props.clearErrors();
     }
 
     renderErrors(){
         return (
             <ul className="errors-list">
                 {this.props.errors.map((error, i) => (
-                    <li className="error" key={`error-${i}`}>
+                    <li className="login-error" key={`error-${i}`}>
                         <p className="red-exclamation">!</p><p className="error-text">{error}</p>
                     </li>
                 ))}
@@ -116,10 +118,12 @@ class Login extends React.Component {
                                 />
                         <div className="auth-errors">{this.renderErrors()}</div>
                     </label>
-                    <p className="demo-link-section">
-                        Not your computer? Log in as a Demo User: <br/> <button onClick={this.demoLogin} className="demo-link" to="/">Demo User</button>
-                    </p> 
                     <button className="next-button" onClick={this.handleEmailSubmit}>Next</button>
+                    <p className="demo-link-section">
+                        Not your computer? Login as a Demo User:
+                        <br/>
+                        <button onClick={this.demoLogin} className="demo-link" to="/">Demo User</button>
+                    </p> 
                 </form>
 
 

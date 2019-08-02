@@ -34,6 +34,10 @@ class Signup extends React.Component {
             })
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     renderErrors() {
         return (
             <ul className="errors-list">
@@ -52,7 +56,6 @@ class Signup extends React.Component {
                 <div className="blugle-signup-logo-container"><img className="blugle-logo" src={window.blugleLogoURL} alt="blugle-logo" /></div>
                     <h2 className="signup-message-h2">Create your Blugle Account</h2>
                     <h4 className="signup-message-h4">to continue to BluTube</h4>
-                    <div className="auth-errors">{this.renderErrors()}</div>
                     <form>
                         <label>
                             <input
@@ -62,6 +65,7 @@ class Signup extends React.Component {
                                 value={this.state.username}
                                 onChange={this.handleInput('username')}
                             />
+                            
                         </label>
                         <br/>
                         <label>
@@ -83,6 +87,7 @@ class Signup extends React.Component {
                                 onChange={this.handleInput('password')}
                             />
                             <br/>
+                            <div className="signup-errors">{this.renderErrors()}</div>
                             <button className="signup-submit" onClick={this.handleSubmit}>Sign Up!</button>
                         </label>
                     </form>

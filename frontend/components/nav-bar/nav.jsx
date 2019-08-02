@@ -5,11 +5,37 @@ import { Link } from 'react-router-dom';
 class Navbar extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            displayLogout: false,
+        }
+
+        this.showLogout = this.showLogout.bind(this);
+        this.hideLogout = this.hideLogout.bind(this);
     }
 
 
+    showLogout(e) {
+        e.preventDefault();
+        this.setState({ displayLogout: true }, () => {
+            document.addEventListener('click', this.hideLogout);
+        });
+    }
+
+    hideLogout() {
+        this.setState({ displayLogout: false }, () => {
+            document.removeEventListener('click', this.hideLogout);
+        });
+
+    }
+
     render(){
         const currentUser = this.props.currentUser;
+
+        let logout = this.state.displayLogout ? (
+            <button className="logout-dropdown" onClick={this.props.logout}>Log Out</button>
+        ):(
+            null
+        )
         
         const display = currentUser ? (
             <div>
@@ -26,9 +52,9 @@ class Navbar extends React.Component {
                         <i className="fa fa-th" aria-hidden="true"></i>
                         <i className="fas fa-envelope-square" aria-hidden="true"></i>
                         <i className="fa fa-bell" aria-hidden="true"></i>
-                        <p className="user-icon">{currentUser.username[0].toUpperCase()}
-                        </p> 
-                            <button className="hidden-logout logout-dropdown" onClick={this.props.logout}>Log Out</button>
+                        <div onClick={this.showLogout} className="user-icon">{currentUser.username[0].toUpperCase()}
+                            {logout}
+                        </div> 
 
                     </li>
                 </ul>

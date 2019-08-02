@@ -5,6 +5,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER"
 export const CHECK_EMAIL = "CHECK_EMAIL"
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
+export const CLEAR_ERRORS = "CLEAR_ERRORS"
 
 const receiveCurrentUser = (user) => {
     return{
@@ -32,6 +33,12 @@ const receiveErrors = (errors) => {
     return{
         type: RECEIVE_ERRORS,
         errors: errors
+    }
+}
+
+export const clearErrors = () => {
+    return {
+        type: CLEAR_ERRORS,
     }
 }
 
