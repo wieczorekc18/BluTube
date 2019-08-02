@@ -68,6 +68,7 @@
     border: 2px solid rgb(209, 205, 205);
     border-radius: 5px;
     outline: none;
+    margin-bottom: 40px;
 }
 
 
@@ -78,17 +79,24 @@
 
 
 .signup-submit {
-    float: center;
+    float: right;
     background-color: rgb(28, 77, 236);
     padding: 10px 30px 10px 30px;
     color: white;
     font-family: verdana, sans-serif;
     font-size: 14px;
     border-radius: 6px;
-    margin-top: 10px;
+    margin-right: 350px;
 }
 
 .signup-errors {
     float: right;
-    margin-top: -150px;
+    margin-top: -210px;
+}
+
+.back-to-login-button {
+    text-decoration: none;
+    color: rgb(28, 77, 236);
+    font-family: verdana, sans-serif;
+    font-size: 14px;
 }

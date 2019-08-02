@@ -8,11 +8,28 @@ class Login extends React.Component {
             email: '',
             password: '',
             emailAccepted: false,
+            displayTextBorder: false,
         };
 
         this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
         this.handleFullSubmit = this.handleFullSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this)
+        this.showTextBorder = this.showTextBorder.bind(this);
+        this.hideTextBorder = this.hideTextBorder.bind(this);
+    }
+
+
+    showTextBorder(e) {
+        e.preventDefault();
+        this.setState({ displayTextBorder: true }, () => {
+            document.addEventListener('click', this.hideTextBorder);
+        });
+    }
+
+    hideTextBorder() {
+        this.setState({ displayTextBorder: false }, () => {
+            document.removeEventListener('click', this.hideTextBorder);
+        });
     }
 
     handleInput(type) {
@@ -76,6 +93,13 @@ class Login extends React.Component {
     }
 
     render() {
+
+        // let inputField = this.state.displayTextBorder ? (
+
+        // ):(
+
+        // ) 
+
         let display = this.state.emailAccepted ? (
             <div className="password-login-form">
                 <h2 className="pw-login-message-h2">Welcome</h2>
@@ -130,6 +154,7 @@ class Login extends React.Component {
                 <Link className="signup-button" to="/signup">
                     Create Account
                 </Link>
+                
             </div>
         );
         

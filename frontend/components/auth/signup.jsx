@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom'
 
 
 class Signup extends React.Component {
@@ -91,6 +92,9 @@ class Signup extends React.Component {
                             <button className="signup-submit" onClick={this.handleSubmit}>Sign Up!</button>
                         </label>
                     </form>
+                    <Link className="back-to-login-button" to="/login">
+                        Sign in instead
+                    </Link>
                 </div>
         );
     }
