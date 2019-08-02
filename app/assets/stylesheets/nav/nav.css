@@ -120,10 +120,41 @@
     top:45px;
     right:0px;
     width: 200px;
+    height: 100px;
     background-color: white;
     font-weight:bold;
     position: absolute;
 
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.dropdown-user-display {
+    color: black;
+    font-size: 14px;
+}
+
+ .logout-button{
+     width:178px;
+     height:18px;
+     background-color:#dddada ;
+     padding:12px;
+     border-radius:5px;
+     font-weight:bold;
+     color:black;
+}
+
+.logout-button:hover {
+    background-color: gray;
+}
+
+.logout-button:before{
+     content:"";
+     position:absolute;
+     width:0px;
+     height:0px;
+     border: 10px solid;
+     border-color: white transparent transparent transparent;
+     right:6px;
+     top:18px;
 }

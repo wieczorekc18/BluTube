@@ -32,7 +32,16 @@ class Navbar extends React.Component {
         const currentUser = this.props.currentUser;
 
         let logout = this.state.displayLogout ? (
-            <button className="logout-dropdown" onClick={this.props.logout}>Log Out</button>
+            <ul className="logout-dropdown">
+                <li>
+                    <div className="dropdown-user-display">
+                        {currentUser.username}
+                        <br/>
+                        {currentUser.email}
+                    </div>
+                </li>
+                <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
+            </ul>
         ):(
             null
         )
