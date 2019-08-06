@@ -45,8 +45,8 @@ const VideoIndexItem = props => {
     return(
         <div className="video-index-item">
             <Link to={`/videos/${props.video.id}`}>
-                {/* <img className="video-index-item-thumb" src={props.video.thumb} alt="thumb here"/> */}
-                <img className="video-index-item-thumb" src={window.bellyflopthumb} alt="thumb here" />
+                <img className="video-index-item-thumb" src={props.video.thumb} alt="thumb here"/>
+                {/* <img className="video-index-item-thumb" src={window.bellyflopthumb} alt="thumb here" /> */}
                 <div className="video-index-item-text">
                     <div className="video-labels">
                         <span className="index-video-title">{props.video.title}</span>

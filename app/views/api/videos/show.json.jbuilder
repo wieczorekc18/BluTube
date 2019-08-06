@@ -8,4 +8,4 @@ json.comments do
     end
 end
 
-# json.vid url_for(@video.video)
+json.vid url_for(@video.video)

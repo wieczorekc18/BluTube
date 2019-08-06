@@ -40,9 +40,8 @@ class VideoShow extends React.Component {
         return(
             <div className="video-show-section">
                 <div className="video-player">
-                    {/* <video width="670" height="375" src={video.vid} controls>
-                    </video> */}
-                    <div className="video-placeholder"><img src={window.bellyflopthumb} alt="" /></div>
+                    <video width="670" height="375" src={video.vid} controls></video>
+                    {/* <div className="video-placeholder"><img src={window.bellyflopthumb} alt="" /></div> */}
                 </div>
                 <div className="video-show-title">{video.title}</div>
                 <div className="video-show-view-counter">{video.views} Views</div>
