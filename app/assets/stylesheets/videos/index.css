@@ -1,0 +1,33 @@
+.video-index-item {
+    margin-right: 20px;
+}
+
+.video-index-item-thumb {
+    width: 211px;
+    height: 118px;
+}
+
+
+.video-index-item-text {
+    width: 211px;
+    height: 118px;
+}
+
+.video-index-ul {
+    list-style: none;
+    display: flex;
+}
+
+
+.index-video-title{
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+.video-labels{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: gray;
+}

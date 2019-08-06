@@ -1,0 +1,55 @@
+.fa-sub {
+    width: 20px;
+    height: 18px;
+}
+
+.full-sidebar {
+    float: left;
+    width: 240px;
+    background-color: rgb(240, 238, 238);
+    height: 100vh;
+    margin-right: 30px;
+}
+
+.collapsed-sidebar{
+    float: left;
+}
+
+.full-sub-icon {
+    display: flex;
+}
+
+.full-home-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.full-trending-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.full-git-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.full-linkedin-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.full-sub-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.full-lib-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.full-history-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+}

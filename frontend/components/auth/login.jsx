@@ -13,7 +13,8 @@ class Login extends React.Component {
 
         this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
         this.handleFullSubmit = this.handleFullSubmit.bind(this);
-        this.demoLogin = this.demoLogin.bind(this)
+        this.emailRefresh = this.emailRefresh.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
         this.showTextBorder = this.showTextBorder.bind(this);
         this.hideTextBorder = this.hideTextBorder.bind(this);
     }
@@ -62,8 +63,13 @@ class Login extends React.Component {
             })
     }
 
-    emailRefresh(){
-
+    emailRefresh(e){
+        e.preventDefault;
+        this.setState({
+            email: this.state.email,
+            emailAccepted: false,
+        })
+        this.props.clearErrors();
     }
 
     demoLogin(e){
@@ -73,7 +79,7 @@ class Login extends React.Component {
             password: "password123!",
             emailAccepted: true,
         })
-        this.props.clearErrors()
+        this.props.clearErrors();
     }
 
     componentWillUnmount(){
@@ -104,7 +110,7 @@ class Login extends React.Component {
             <div className="password-login-form">
                 <h2 className="pw-login-message-h2">Welcome</h2>
                 <div className="link-back-to-email-div">
-                    <Link className="link-back-to-email" to="/login" onClick={this.emailRefresh()}>
+                    <Link className="link-back-to-email" to="/login" onClick={this.emailRefresh}>
                         <p className="email-display">
                             <i className="fas fa-user"></i>
                             {this.state.email}
@@ -122,7 +128,7 @@ class Login extends React.Component {
                             />
                     </label>
                     <div className="auth-errors">{this.renderErrors()}</div>
-                    <button className="full-submit-button" onClick={this.handleFullSubmit}>Sign In!</button>
+                    <button className="full-submit-button" onClick={this.handleFullSubmit} >Sign In!</button>
                 </form>
             </div>
         ) : (
@@ -144,9 +150,11 @@ class Login extends React.Component {
                     </label>
                     <button className="next-button" onClick={this.handleEmailSubmit}>Next</button>
                     <p className="demo-link-section">
-                        Not your computer? Login as a Demo User:
+                            <span className="demo-link-text">Not your computer? Login as a Demo User:</span>
                         <br/>
-                        <button onClick={this.demoLogin} className="demo-link" to="/">Demo User</button>
+                        <button onClick={this.demoLogin} className="demo-link">
+                            Demo User
+                        </button>
                     </p> 
                 </form>
 

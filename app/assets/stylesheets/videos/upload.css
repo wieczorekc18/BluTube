@@ -1,0 +1,41 @@
+
+.upload-icon {
+    height: 188px;
+	background-color: #bebaba;
+	border-radius: 28px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+    font-size: 150px;
+    font-weight: 900;
+	padding: 30px 38px 0px 38px;
+	text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    border-bottom: solid white 30px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+.upload-icon:hover {
+	background-color:#2727d6;
+}
+.upload-icon:active {
+	position:relative;
+	top:1px;
+}
+
+
+.video-file-input {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.video-input-section{
+    padding-top: 80px;
+    padding-left: 30vw;
+}

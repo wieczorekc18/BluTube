@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
 
+    resources :videos, only: [:index, :show, :create] do
+      resources :comments, only: [:index, :new, :create]
+    end
+
     get '/session/check_email', :to => 'sessions#check_email', :defaults => { :format => 'json' }
   end
-
 
 end

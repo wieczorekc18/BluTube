@@ -10,11 +10,11 @@ import LoginContainer from './auth/login_container';
 const Root = ({ store }) => (
     <Provider store={store}>
         <HashRouter>
-            {/* <Switch> */}
+            <Switch>
+                <AuthRoute exact path="/login" component={LoginContainer} />
+                <AuthRoute exact path="/signup" component={SignupContainer} />
                 <MainApp />
-                <AuthRoute path="/login" component={LoginContainer} />
-                <AuthRoute path="/signup" component={SignupContainer} />
-            {/* </Switch> */}
+            </Switch>
         </HashRouter>
     </Provider>
 );

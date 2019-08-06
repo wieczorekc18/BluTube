@@ -6,13 +6,14 @@
     border: solid rgb(209, 205, 205) 2px;
     padding: 48px 40px 36px;
     box-sizing: border-box;
-    margin-top: 40px;
+    margin-top: 80px;
     border-radius: 10px;
 }
 
 .blugle-logo {
     width: 80px;
     height: 30px;
+    margin-bottom: 20px;
 }
 
 .blugle-logo-container{
@@ -32,13 +33,14 @@
 
 .login-input {
     width: 94%;
-    height: 30px;
+    height: 50px;
     font-size: 16px;
     padding: 10px;
     margin-top: 30px;
     border: 2px solid rgb(209, 205, 205);
     border-radius: 5px;
     outline: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -52,6 +54,7 @@
     text-align: center;
     font-family: Verdana, sans-serif;
     font-weight: 100;
+    font-size: 22px;
 }
 
 .login-message-h4 {
@@ -70,7 +73,9 @@
     font-family: verdana, sans-serif;
     font-size: 14px;
     border-radius: 6px;
-    margin-top: 135px;
+    position: relative;
+    top: 35px;
+    right: 20px;
 }
 
 .full-submit-button {
@@ -82,6 +87,7 @@
     font-size: 14px;
     border-radius: 6px;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 .signup-button {
@@ -89,13 +95,18 @@
     color: rgb(28, 77, 236);
     font-family: verdana, sans-serif;
     font-size: 14px;
+    position: relative;
+    bottom: 60px;
 }
 
 .demo-link-section {
     margin: 50px 0px 50px 0px;
     font-family: verdana, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
+    position: relative;
+    bottom: 40px;
 }
+
 
 
 .demo-link {
@@ -105,15 +116,16 @@
     font-weight: 600;
     text-decoration: none;
     border: none;
-    margin-left: -8px;
     background-color: white;
+    
 }
 
 .pw-login-message-h2 {
     text-align: center;
     font-family: Verdana, sans-serif;
     font-weight: 100;
-    margin-bottom: -5px;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .link-back-to-email {
@@ -145,18 +157,22 @@
 .errors-list {
     list-style: none;
     padding: 0px;
-    margin: 0px 0px 0px 2px;
+    margin: 80px 0px 0px 2px;
     font-size: 14px; 
+
 }
 
 .login-error {
     display: flex;
     position: absolute;
     z-index: 1;
+    top: 350px;
 }
 
 .error {
     display: flex;
+    position: relative;
+    bottom: 40px;
 }
 
 .red-exclamation {
@@ -166,6 +182,7 @@
     color: white;
     font-size: 15px;
     margin-right: 4px;
+    margin-bottom: 12px;
 }
 
 .error-text {

@@ -53,14 +53,16 @@ class Navbar extends React.Component {
             <div>
                 <ul className="logged-nav-elements">
                     <li className="logged-left-nav-group">
-                        <i className="fa fa-bars" aria-hidden="true"></i>
+                        <div className="bars icon"><i className="fa fa-bars" aria-hidden="true"></i></div>
                         <Link className="blutube-logo-link" to="/">
                             <img className="blutube-logo" src={window.blutubeLogoURL} alt="logo-here" />
                         </Link>
                     </li>
-                    <li><input className="logged-search-bar" type="search" placeholder="search" name="" id="" /></li>
-                    <li className="logged-right-nav-group">
-                        <i className="fas fa-video" aria-hidden="true"></i>
+                    <li className="logged-search-li"><input className="logged-search-bar" type="search" placeholder="Search" name="" id="" />
+                        
+                    </li>
+                    <li className="logged-right-nav-group"> 
+                        <Link className="logged-upload-link" to="/videos/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
                         <i className="fa fa-th" aria-hidden="true"></i>
                         <i className="fas fa-envelope-square" aria-hidden="true"></i>
                         <i className="fa fa-bell" aria-hidden="true"></i>
@@ -80,9 +82,11 @@ class Navbar extends React.Component {
                                 <img className="blutube-logo" src={window.blutubeLogoURL} alt="logo-here" />
                             </Link>
                         </li>
-                        <li><input className="search-bar" type="search" placeholder="search" name="" id="" /></li>
+                        <li className="search-li"><input className="search-bar" type="search" placeholder="Search" name="" id=""/>
+                            
+                        </li>
                         <li className="right-nav-group">
-                            <i className="fas fa-video" aria-hidden="true"></i>
+                            <Link className="upload-link" to="/videos/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
                             <i className="fa fa-th" aria-hidden="true"></i>
                             <i className="fas fa-envelope-square" aria-hidden="true"></i>
                             <i className="fa fa-bell" aria-hidden="true"></i>
@@ -100,6 +104,7 @@ class Navbar extends React.Component {
                 <div>
                     {display}
                 </div>
+                <p className="nav-border"> </p>
             </header>
         );
 

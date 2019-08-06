@@ -1,27 +1,87 @@
 
+
+.nav-bar {
+    /* box-shadow: 1px 0px 4px gray; */
+
+    margin-top: -2px;
+    padding-left: 3px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+
+.fa-bars {
+    margin-left: 15px;
+}
+
+.nav-border {
+    width: 100vw;
+    margin-left: -4px;
+    margin-top: -4px;
+    border-top: 3px solid rgb(236, 234, 234);
+}
+
 .nav-elements {
     display: flex;
     list-style: none;
     padding: 0;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 0px;
     width: 100%;
     justify-content: space-between;
     align-items: center;
 }
 
 .logged-nav-elements {
+    
     display: flex;
     list-style: none;
     padding: 0;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 0px;
     width: 100%;
     justify-content: space-between;
     align-items: center;
 }
 
 .search-bar {
+    padding: 10px;
+    height: 12px;
+    width: 30vw;
+    font-family: sans-serif;
+    position: relative;
+    bottom: 10px;
+    right: 5px;
 }
 
-.logged-search-bar {
 
+
+.search-li {
+    padding: 10px;
+    height: 12px;
+    width: 40vw;
+    border: solid rgb(192, 187, 187) 1px;
+    border-radius: 4px;
+
+}
+
+
+
+
+
+.logged-search-bar {
+    padding: 10px;
+    height: 12px;
+    width: 40vw;
+    border: solid rgb(192, 187, 187) 1px;
+    border-radius: 4px;
+    font-family: sans-serif;
 }
 
 .right-nav-group {
@@ -32,14 +92,24 @@
     
 }
 
-.right-nav-group i {
+.upload-link{
+    margin-top: 14px;
+}
+
+.logged-upload-link {
+    margin-top: 0px;
+}
+
+
+
+.right-nav-group > i {
     margin-top: 14px;
 }
 
 .logged-right-nav-group {
     display: flex;
     justify-content: space-between;
-    width: 25%;
+    width: 20%;
     margin-top: 0px;
     
 }
@@ -49,15 +119,15 @@
 }
 
 .sign-in-button {
-    margin-left: 20px;
+    margin-left: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: -2px;
-    height: 40px;
+    margin-top: 2px;
+    height: 36px;
     border: solid rgb(255, 60, 0) 2px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     text-decoration: none;
     font-family: sans-serif;
     font-size: 15px;
@@ -70,6 +140,10 @@
     width: 20px;
     height: 19px;
     margin-right: 7px;
+}
+
+.sign-in-text {
+    color: rgb(199, 38, 17);
 }
 
 .left-nav-group {
@@ -103,10 +177,11 @@
     font-size: 18px;
     border-radius: 100px; 
     padding: 5px 10px 5px 10px;
-    margin-top: 0px;
+    margin-top: 4px;
     margin-right: 20px;
     background-color: rgb(27, 5, 150);
     border: none;
+    margin-bottom: 6px;
 }
 
 .user-icon:hover {
@@ -170,3 +245,5 @@
      right:6px;
      top:18px;
 }
+
+
