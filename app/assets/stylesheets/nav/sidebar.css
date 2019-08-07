@@ -1,4 +1,4 @@
-.fa-sub {
+/* .fa-sub {
     width: 20px;
     height: 18px;
 }
@@ -9,6 +9,7 @@
     background-color: rgb(240, 238, 238);
     height: 100vh;
     margin-right: 30px;
+    margin-top: -2px;
 }
 
 .collapsed-sidebar{
@@ -52,4 +53,48 @@
 .full-history-icon {
     margin-left: 20px;
     margin-top: 10px;
+}
+ */
+
+
+.home-full-side {
+    float: left;
+    background-color: rgb(241, 241, 241);
+    width: 20%;
+    height: 100vh;
+    margin-left: -3px;
+}
+
+.full-home-icon{
+    color: rgb(49, 92, 233);
+    margin-right: 20px;
+}
+
+.full-home-home{
+    padding: 10px 20px 10px 20px;
+    margin-top: 13px;
+}
+
+
+.full-git-home{
+    padding: 10px 20px 10px 20px;
+    
+}
+
+.full-git-icon{
+    margin-right: 20px;
+}
+
+.full-linkedin-home{
+    padding: 10px 20px 10px 20px;
+    
+}
+
+.full-linkedin-icon{
+    margin-right: 20px;
+}
+
+.sidebar-hover:hover{
+    background-color: rgb(209, 208, 208);
+    cursor: pointer;
 }

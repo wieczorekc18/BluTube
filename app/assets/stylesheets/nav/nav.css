@@ -20,7 +20,8 @@
     width: 100vw;
     margin-left: -4px;
     margin-top: -4px;
-    border-top: 3px solid rgb(236, 234, 234);
+    border-top: 2px solid rgb(236, 234, 234);
+    border-bottom: 2px solid rgb(236, 234, 234);
 }
 
 .nav-elements {

@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/wieczorekc18/BluTube/issues"
   },
-  "homepage": "https://github.com/wieczorekc18/BluTube#readme"
+  "homepage": "https://github.com/wieczorekc18/BluTube#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5"
+  }
 }
