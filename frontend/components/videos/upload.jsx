@@ -61,10 +61,9 @@ class UploadVideo extends React.Component{
         formData.append('video[description]', this.state.description)
         formData.append('video[video]', this.state.videoFile)
         formData.append('video[thumbnail]', this.state.thumbFile)
-        this.props.postVideo(formData)
-            .then(res => {
-                return this.props.history.push(`/videos/${res.video.id}`)
-            })
+        this.props.postVideo(formData).then(res => 
+                this.props.history.push(`/videos/${res.video.id}`)
+            )
     }
 
     render(){

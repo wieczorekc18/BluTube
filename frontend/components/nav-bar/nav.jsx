@@ -110,10 +110,13 @@ class Navbar extends React.Component {
         let logout = this.state.displayLogout ? (
             <ul className="logout-dropdown">
                 <li>
-                    <div className="dropdown-user-display">
-                        {currentUser.username}
-                        <br/>
-                        {currentUser.email}
+                    <div className="dropdown-user-section">
+                        <img className="dropdown-user-icon" src={window.userIcon2}/>
+                        <div className="dropdown-user-display">
+                            {currentUser.username}
+                            <br/>
+                            {currentUser.email}
+                        </div>
                     </div>
                 </li>
                 <li className="logout-li" onClick={this.props.logout}>

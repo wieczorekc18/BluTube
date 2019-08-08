@@ -1,6 +1,7 @@
 import React from 'react'
 import CommentIndexItem from './comment_index_item'
 import VideoIndexItem from './index_item'
+import CommentForm from './comment_form'
 
 class VideoShow extends React.Component {
 
@@ -33,7 +34,7 @@ class VideoShow extends React.Component {
         //         />)
         //     }
         // })
-
+        debugger
         let video;
         this.props.video ? video = this.props.video : video = {title: "", description: "", views: "", uploader: {username: "d"}}
         let comments = [];
@@ -46,6 +47,11 @@ class VideoShow extends React.Component {
                 />
             )
         })
+
+        let likes
+        video.videoLikes ? likes = video.videoLikes : likes = 0
+        let dislikes
+        video.videoDislikes ? dislikes = video.videoDislikes : dislikes = 0
         let uploadDate = this.formatDate(video.created_at)
         return(
             <div className="video-show-page">
@@ -69,7 +75,7 @@ class VideoShow extends React.Component {
                     <div className="comment-heading">
                         {comments.length} Comments
                     </div>
-                    {/* <CommentForm/> */}
+                    <CommentForm/>
                     <ul className="comment-ul">
                         {commentDisplay}
                     </ul>

@@ -32,11 +32,12 @@ class Video < ApplicationRecord
         class_name: :Comment
 
     has_many :likes,
-        as: :likable,
+        as: :likeable,
         class_name: :Like
 
 
     validate :video_size_validation
+    validate :thumb_validation
 
     def video_size_validation
         if video.attached?
@@ -50,7 +51,6 @@ class Video < ApplicationRecord
         end
     end
 
-    validate :thumb_validation
 
     def thumb_validation
         if thumbnail.attached?
