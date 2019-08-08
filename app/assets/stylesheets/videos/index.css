@@ -5,6 +5,7 @@
 .video-index-item-thumb {
     width: 211px;
     height: 118px;
+    overflow: hidden;
 }
 
 
@@ -16,6 +17,8 @@
 .video-index-ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
 }
 
 

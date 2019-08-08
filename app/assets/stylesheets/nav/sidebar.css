@@ -63,6 +63,7 @@
     width: 20%;
     height: 100vh;
     margin-left: -3px;
+    margin-right: 35px;
 }
 
 .full-home-icon{
@@ -98,3 +99,88 @@
     background-color: rgb(209, 208, 208);
     cursor: pointer;
 }
+
+.home-part-side{
+    margin-right: 5%;
+    float: left;
+    background-color: rgb(241, 241, 241);
+    width: 70px;
+    height: 100vh;
+    margin-left: -3px;
+    text-align: center;
+}
+
+.part-home-icon{
+    color: rgb(49, 92, 233);
+    margin: 0 auto;
+}
+
+.collapsed-home-home{
+    margin-top: 13px;
+    margin-bottom: 20px
+}
+.collapsed-git-icon{
+    margin-bottom: 20px
+}
+.collapsed-linkedin-icon{
+    margin-bottom: 20px
+}
+
+
+
+.away-full-side{
+    position: absolute;
+    z-index: 1;
+    float: left;
+    background-color: rgb(241, 241, 241);
+    width: 20%;
+    height: 100vh;
+    margin-left: -3px;
+
+}
+
+.full-away-home-icon{
+    margin-right: 20px;
+}
+
+.full-away-home{
+    padding: 10px 20px 10px 20px;
+    margin-top: 13px;
+}
+
+
+.full-git-away{
+    padding: 10px 20px 10px 20px;
+    
+}
+
+.full-away-git-icon{
+    margin-right: 20px;
+}
+
+.full-linkedin-away{
+    padding: 10px 20px 10px 20px;
+    
+}
+
+.full-away-linkedin-icon{
+    margin-right: 20px;
+}
+
+.sidebar-hover:hover{
+    background-color: rgb(209, 208, 208);
+    cursor: pointer;
+}
+
+
+/* <div className="home-part-side">
+    <div className="collapsed-home-home"><i className="fas fa-home part-home-icon"></i><br/>Home</div>
+    <div className="collapsed-git-icon"><i className="fab fa-github"></i><br/>Github</div>
+    <div className="collapsed-linkedin-icon"><i className="fab fa-linkedin"></i><br/>LinkedIn</div>
+</div>
+
+<div className="away-full-side">
+    <div className="full-away-home sidebar-hover"><i className="fas fa-home full-away-home-icon"></i>Home</div>
+    <div className="full-git-away sidebar-hover"><i className="fab fa-github full-away-git-icon"></i>Github</div>
+    <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
+</div> */

@@ -12,7 +12,7 @@ class Api::VideosController < ApplicationController
         # debugger
         @video.uploader = current_user
         if @video.save
-            render json: {message: 'success'}
+            render :show
         else  
             render json: @video.errors.full_messages, status: 422
         end

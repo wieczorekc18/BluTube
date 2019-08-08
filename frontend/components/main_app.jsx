@@ -6,20 +6,17 @@ import NavbarContainer from './nav-bar/nav_container';
 import Home from './home/home';
 import VideoIndexContainer from './videos/index_container'
 import VideoShowContainer from './videos/show_container'
-import SideContainer from './side-bar/side_container'
 import VideoUploadContainer from './videos/upload_container'
-import NavBar from './nav-bar/nav'
 
 
 const MainApp = () => (
     <div>
         
-        <Route path="/" component={NavbarContainer} key={Math.random(0,500)}/>
-        {/* <Route exact path="/" component={SideContainer} /> */}
+        <Route path="/" component={NavbarContainer} key={Math.random(0,500)}/> 
         <Route exact path="/" component={Home} />
         <Route exact path="/" component={VideoIndexContainer}/>
         <Switch>
-            <ProtectedRoute exact path="/videos/upload" component={VideoUploadContainer} />
+            <ProtectedRoute exact path="/upload" component={VideoUploadContainer} />
             <Route exact path="/videos/:videoId" component={VideoShowContainer} />
         </Switch>
     </div>

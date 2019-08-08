@@ -12,6 +12,7 @@
 #
 
 class Comment < ApplicationRecord
+
     validates :body, presence: true
 
     belongs_to :author,
@@ -34,5 +35,9 @@ class Comment < ApplicationRecord
         foreign_key: :parent_comment_id,
         primary_key: :id,
         optional: true
+
+    has_many :likes,
+        as: :likable,
+        class_name: :Like
 
 end

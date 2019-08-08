@@ -13,6 +13,9 @@ const HomeFullSide = () => {
 
 export default HomeFullSide;
 
+
+
+
 // <div className="full-sidebar">
 //     c
 //     <div className="full-trending-icon"><i className="fas fa-fire"></i>Trending</div>

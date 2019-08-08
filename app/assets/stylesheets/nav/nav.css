@@ -87,7 +87,7 @@
 
 .right-nav-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;/*was center*/
     width: 25%;
     margin-right: 20px;
     
@@ -109,10 +109,14 @@
 
 .logged-right-nav-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;/*was center*/
     width: 20%;
     margin-top: 0px;
     
+}
+
+/**/.fa-video{
+    margin-right: 20px;
 }
 
 .logged-right-nav-group i {

@@ -31,28 +31,34 @@ duck_sauce = Video.create!(
   uploader_id: hunter.id
 )
 
-# bellyflop = Video.create!(
-#   title: "bellyflop",
-#   uploader_id: hunter.id
+bellyflop = Video.create!(
+  title: "bellyflop",
+  uploader_id: hunter.id
+)
+
+# comment1 = Comment.create!(
+#   body: "This is a comment about the duck-sauce video",
+#   author_id: demo.id,
+#   video_id: duck_sauce.id
 # )
 
-comment1 = Comment.create!(
-  body: "This is a comment about the duck-sauce video",
-  author_id: demo.id,
-  video_id: duck_sauce.id
-)
-
-comment2 = Comment.create!(
-  body: "This is a reply to the comment about the duck-sauce video",
-  author_id: demo.id,
-  video_id: duck_sauce.id,
-  parent_comment_id: comment1.id
-)
+# comment2 = Comment.create!(
+#   body: "This is a reply to the comment about the duck-sauce video",
+#   author_id: demo.id,
+#   video_id: duck_sauce.id,
+#   parent_comment_id: comment1.id
+# )
 
 duck_thumb = open("https://blutube-seed.s3.amazonaws.com/DuckSauceThumb.png")
 duck_vid = open("https://blutube-seed.s3.amazonaws.com/duck-sauce.mp4")
 duck_sauce.thumbnail.attach(io: duck_thumb, filename: "duck-sauce-thumb.png")
 duck_sauce.video.attach(io: duck_vid, filename: "duck-sauce.mp4")
+
+
+belly_thumb = open("https://blutube-seed.s3.amazonaws.com/bellyflopthumb.png")
+belly_vid = open("https://blutube-seed.s3.amazonaws.com/belly-flop.mp4")
+bellyflop.thumbnail.attach(io: belly_thumb, filename: "bellyflopthumb.png")
+bellyflop.video.attach(io: belly_vid, filename: "belly-flop.mp4")
 
 
 # bellyflopthumb = File.open("https://blutube-develop.s3.amazonaws.com/bRkRxFixVLpQtJ3iuXBzcYCs")

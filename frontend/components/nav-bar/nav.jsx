@@ -49,7 +49,6 @@ class Navbar extends React.Component {
     }
 
     setSideAction(e){
-        debugger
         e.preventDefault();
         if (this.state.side === null) {
             return this.showFull(e);
@@ -90,7 +89,6 @@ class Navbar extends React.Component {
     }
 
     showFull(e) {
-        debugger
         e.preventDefault();
         this.props.location.pathname === "/" ? (
             this.setState({
@@ -108,7 +106,6 @@ class Navbar extends React.Component {
     }
 
     render(){
-        debugger
         const currentUser = this.props.currentUser;
         let logout = this.state.displayLogout ? (
             <ul className="logout-dropdown">
@@ -141,10 +138,10 @@ class Navbar extends React.Component {
                         
                     </li>
                     <li className="logged-right-nav-group"> 
-                        <Link className="logged-upload-link" to="/videos/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
-                        <i className="fa fa-th" aria-hidden="true"></i>
+                        <Link className="logged-upload-link" to="/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
+                        {/* <i className="fa fa-th" aria-hidden="true"></i>
                         <i className="fas fa-envelope-square" aria-hidden="true"></i>
-                        <i className="fa fa-bell" aria-hidden="true"></i>
+                        <i className="fa fa-bell" aria-hidden="true"></i> */}
                         <div onClick={this.showLogout} className="user-icon">{currentUser.username[0].toUpperCase()}
                             {logout}
                         </div> 
@@ -165,10 +162,10 @@ class Navbar extends React.Component {
                             
                         </li>
                         <li className="right-nav-group">
-                            <Link className="upload-link" to="/videos/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
-                            <i className="fa fa-th" aria-hidden="true"></i>
+                            <Link className="upload-link" to="/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
+                            {/* <i className="fa fa-th" aria-hidden="true"></i>
                             <i className="fas fa-envelope-square" aria-hidden="true"></i>
-                            <i className="fa fa-bell" aria-hidden="true"></i>
+                            <i className="fa fa-bell" aria-hidden="true"></i> */}
                             <Link className="sign-in-button" to="/login">
                                 <div className="dummy-user-icon-div"><img className="dummy-user-icon" src={window.userDummyURL} alt="user-icon" /></div>
                                 <p className="sign-in-text">Sign In</p>

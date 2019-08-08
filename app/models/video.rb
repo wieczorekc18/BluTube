@@ -31,4 +31,36 @@ class Video < ApplicationRecord
         foreign_key: :video_id,
         class_name: :Comment
 
+    has_many :likes,
+        as: :likable,
+        class_name: :Like
+
+
+    validate :video_size_validation
+
+    def video_size_validation
+        if video.attached?
+            if video.blob.byte_size > 10000000
+                video.purge
+                errors[:base] << 'File is too big'
+            elsif !video.blob.content_type.starts_with?('video/')
+                video.purge
+                errors[:base] << 'File is the wrong format'
+            end
+        end
+    end
+
+    validate :thumb_validation
+
+    def thumb_validation
+        if thumbnail.attached?
+            if thumbnail.blob.byte_size > 10000000
+                thumbnail.purge
+                errors[:base] << 'File is too big'
+            elsif !thumbnail.blob.content_type.starts_with?('image/')
+                thumbnail.purge
+                errors[:base] << 'File is the wrong format'
+            end
+        end
+    end
 end

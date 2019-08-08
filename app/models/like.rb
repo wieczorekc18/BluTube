@@ -14,5 +14,8 @@
 class Like < ApplicationRecord
     validates :user_id, uniqueness: { scope: [:likeable_id, :likeable_type] }
 
-    
+
+    belongs_to :user,
+        foreign_key: :user_id,
+        class_name: :User
 end

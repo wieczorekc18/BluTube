@@ -62,49 +62,55 @@ class UploadVideo extends React.Component{
         formData.append('video[video]', this.state.videoFile)
         formData.append('video[thumbnail]', this.state.thumbFile)
         this.props.postVideo(formData)
-            .then(
-                (response) => console.log(response.message),
-                (response) => console.log(response.responseJSON)
-            ).then(() => props.history.push("/"))
+            .then(res => {
+                return this.props.history.push(`/videos/${res.video.id}`)
+            })
     }
 
     render(){
         // debugger
         let thumbPreview = this.state.thumbUrl ? <img src={this.state.thumbUrl} alt="thumb here"/> : null;
         let display = this.state.videoReceived ? (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div >
+                <form className="upload-form" onSubmit={this.handleSubmit}>
                     <div className="thumb-section">
                         <h5>Thumbnail Preview</h5>
                         <label className="upload-thumb-label">
                             <div className="thumb-preview">{thumbPreview}</div>
-                            <input className="thumb-file-input" type="file" accept="image/*" onChange={this.receiveThumb} />
+                            <input className="thumb-file-input" type="file" accept="image/*" onChange={this.receiveThumb} required/>
                             <p>Select img file for thumbnail</p>
                         </label>
                     </div>
-                    <div className="blue-bar-section">
-                        <div className="processing-bar">
-                            100% of file uploaded
-                        </div>
+                    <div className="upload-page-2-middle-section">
+                        {/* <div className="blue-bar-section">
+                            { <div className="processing-bar">
+                                100% of file uploaded
+                            </div> }
+                            <br />
+                        </div> */}
+
                         <input className="upload-video-button" type="submit" value="Publish"/>
-                        <br />
+                        <br/>
+                        <div className="upload-inputs">
+                            <label>
+                                <input className="upload-title-input" type="text" placeholder="Title" value={this.state.title} onChange={this.updateTextInput("title")} required/>
+                            </label>
+                            <br/>
+                            <label>
+                                <textarea className="upload-description-input" placeholder="Description" value={this.state.description} onChange={this.updateTextInput("description")}></textarea>
+                            </label>
+                        </div>
                     </div>
-                    <label>
-                        <input className="upload-title-input" type="text" placeholder="Title" value={this.state.title} onChange={this.updateTextInput("title")} />
-                    </label>
-                    <br/>
-                    <label>
-                        <textarea className="upload-description-input" placeholder="Description" value={this.state.description} onChange={this.updateTextInput("description")}></textarea>
-                    </label>
                 </form>
             </div>
 
         ):(
             <div className="video-input-section">
                 <label className="upload-video-label">
-                    <input className="video-file-input" accept="video/*" type="file" onChange={this.receiveVideo} />
+                    <input className="video-file-input" accept="video/*" type="file" onChange={this.receiveVideo} required/>
                         <p className="upload-icon">&#x2B06;</p>
-                    Select File to Upload
+                        <br/>
+                        <p className="select-file-p">Select File to Upload</p> 
                 </label>
             </div>
         )

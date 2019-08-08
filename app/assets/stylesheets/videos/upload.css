@@ -6,10 +6,20 @@
 }
 
 .video-upload-display{
-    margin: 20px;
+    position: relative;
+    top: 20px;
     background-color: white;
-    height: 100vh;
-    
+    height: 80vh;
+    width: 90%;
+    margin-left: 5vw;
+    box-shadow: 10px 10px 10px 10px #bebaba;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.upload-form{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .upload-icon {
@@ -38,6 +48,11 @@
 	top:1px;
 }
 
+.select-file-p{
+    position: relative;
+    left: 50px;
+    width: 50%;
+}
 
 .video-file-input {
     width: 0.1px;
@@ -68,44 +83,62 @@
 }
 
 .upload-title-input{
+    margin-top: 50px;
     padding: 6px;
     height: 16px;
-    border: solid rgb(209, 206, 206);
+    border: 1px solid rgb(209, 206, 206);
+    width: 80%;
+}
+
+.upload-inputs{
+    width: 60vw;
 }
 
 .upload-description-input{
+    margin-top: 15px;
     padding: 6px;
     height: 60px;
-    width: 414px;
-    border: solid rgb(209, 206, 206);
+    width: 80%;
+    border: 1px solid rgb(209, 206, 206);
+}
+
+.upload-title-input:focus{
+    border: 1px solid blue;
+}
+
+.upload-description-input:focus{
+    border: 1px solid blue;
+    
 }
 
 .thumb-preview{
     height: 108px;
     width: 195px;
     background-color: gray;
+    overflow: hidden;
 }
-
+/* 
 .processing-bar {
     width: 60%;
     height: 25px;
     background-color: rgb(136, 193, 247);
     border: 1px solid rgb(4, 4, 128);
-}
+} */
 
 .upload-video-button{
     padding: 10px;
     background-color: rgb(61, 170, 243);
     color: white;
     border-radius: 5px;
-    margin-left: 12px;
+    float: right;
+    margin-right: 40px;
 }
 
 .upload-thumb-label:hover{
     cursor: pointer;
 }
 
-.blue-bar-section{
-    width: 50vw;
-    display: flex;
+
+.upload-page-2-middle-section{
+    width: 50%;
 }

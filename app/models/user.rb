@@ -28,6 +28,10 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Comment
 
+    has_many :likes, 
+        foreign_key: :user_id,
+        class_name: :User
+
     after_initialize :ensure_session_token, :assign_color
 
     attr_reader :password 

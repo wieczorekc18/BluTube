@@ -1,18 +1,32 @@
+.video-show-page{
+    width: 100%;
+}
+
 .video-placeholder{
     height: 375px;
     width: 670px;
+}
+.video-player{
+    overflow: hidden;
 }
 
 .video-show-section {
     padding-left: 35px;
     margin-top: 25px;
-    width: 55%;
+    width: 82%;
 }
 
 .video-show-title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: black;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.horiz-line{
+    border: .5px solid rgb(202, 202, 202);
+    width: 100%;
 }
 
 .video-show-view-counter {
@@ -36,7 +50,7 @@
 
 .video-show-sub-button{
     float: right;
-    background-color: rgb(197, 9, 9);
+    background-color: rgb(41, 71, 243);
     font-family: arial, sans-serif;
     color: white;
     padding: 10px 30px 10px 30px;
@@ -57,7 +71,7 @@
 }
 
 .single-comment{
-    margin-top: 300px;
+    margin-top: 30px;
 }
 
 .single-comment-author{
@@ -66,4 +80,12 @@
 
 .single-comment-body{
 
+}
+
+.video-show-index{
+    float: right;
+}
+
+.comment-heading{
+    font-family: arial, sans-serif;
 }

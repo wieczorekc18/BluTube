@@ -4,9 +4,9 @@ import React from 'react';
 const HomePartSide = () => {
     return(
         <div className="home-part-side">
-            <div className="collapsed-home-icon"><i className="fas fa-home"></i>Home    asdfasdfasd</div>
-            <div className="collapsed-git-icon"><i className="fab fa-github"></i>Github</div>
-            <div className="collapsed-linkedin-icon"><i className="fab fa-linkedin"></i>LinkedIn</div>
+            <div className="collapsed-home-home sidebar-hover"><i className="fas fa-home part-home-icon"></i><br />Home</div>
+            <div className="collapsed-git-icon sidebar-hover"><i className="fab fa-github"></i><br />Github</div>
+            <div className="collapsed-linkedin-icon sidebar-hover"><i className="fab fa-linkedin"></i><br />LinkedIn</div>
         </div>
     )
 }
