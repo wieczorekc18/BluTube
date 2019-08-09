@@ -82,23 +82,32 @@
 	z-index: -1;
 }
 
+.hidden{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
 .upload-title-input{
     margin-top: 50px;
     padding: 6px;
     height: 16px;
     border: 1px solid rgb(209, 206, 206);
-    width: 80%;
+    width: 100%;
 }
 
 .upload-inputs{
-    width: 60vw;
+    width: 100%;
 }
 
 .upload-description-input{
     margin-top: 15px;
     padding: 6px;
     height: 60px;
-    width: 80%;
+    width: 100%;
     border: 1px solid rgb(209, 206, 206);
 }
 
@@ -126,7 +135,7 @@
 } */
 
 .upload-video-button{
-    padding: 10px;
+    padding: 7px;
     background-color: rgb(61, 170, 243);
     color: white;
     border-radius: 5px;

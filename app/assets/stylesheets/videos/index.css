@@ -20,6 +20,9 @@
     flex-wrap: wrap;
 }
 
+.recommended-header{
+    font-family: arial;
+}
 
 .index-video-title{
     font-weight: 700;

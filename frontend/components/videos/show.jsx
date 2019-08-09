@@ -3,12 +3,27 @@ import CommentIndexItem from './comment_index_item'
 import VideoIndexItem from './index_item'
 import CommentForm from './comment_form'
 
+
+
+
 class VideoShow extends React.Component {
 
     constructor(props){
         super(props)
-        this.formatDate = this.formatDate.bind(this)
+        this.state = {
+            refresh: Math.random(0, 50),
+        }
+        this.formatDate = this.formatDate.bind(this);
+        this.refresh = this.refresh.bind(this);
     }
+
+    refresh(){
+        debugger
+        this.setState({
+            refresh: Math.random(0, 50),
+        })
+    }
+
 
     formatDate(ts="2018-18-18-18"){
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -44,6 +59,7 @@ class VideoShow extends React.Component {
                 <CommentIndexItem
                     key={`${c.id}`}
                     comment={c}
+                    refresh={this.refresh}
                 />
             )
         })
@@ -60,13 +76,24 @@ class VideoShow extends React.Component {
                         <video src={video.vid} controls></video>
                         {/* <div className="video-placeholder"><img src={window.bellyflopthumb} alt="" /></div> */}
                     </div>
-                    <div className="video-show-title">{video.title}</div>
-                    <div className="video-show-view-counter">{video.views} Views</div>
+                    <div className="section-one">
+                        <div className="section-one-left">
+                            <div className="video-show-title">{video.title}</div>
+                            <div className="section-one-bottom-half">
+                                <div className="video-show-view-counter">{video.views} Views</div>
+                                <div className="section-one-right">
+                                    <div className="likebar">
+                                        <i className="fas fa-thumbs-up"><span className="num-likes">{likes}</span></i><i className="fas fa-thumbs-down"><span className="num-dislikes">{dislikes}</span></i> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <hr className="horiz-line"/>
                     <div className="uploader-details-section">
                         <div className="video-show-uploader-icon">{video.uploader.username[0].toUpperCase()}</div >
                         <div className="video-show-uploader">{video.uploader.username}</div >
-                        <span className="video-show-sub-button">Subscribe</span>
+                        {/* <span className="video-show-sub-button">Subscribe</span> */}
                         <div className="video-show-upload-date">{uploadDate}</div>
                     </div>
                     <div className="video-show-description">{ video.description }</div >
@@ -75,7 +102,7 @@ class VideoShow extends React.Component {
                     <div className="comment-heading">
                         {comments.length} Comments
                     </div>
-                    <CommentForm/>
+                    <CommentForm refresh={this.refresh}/>
                     <ul className="comment-ul">
                         {commentDisplay}
                     </ul>

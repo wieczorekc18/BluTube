@@ -1,31 +1,42 @@
 import React from 'react';
+import { withRouter } from "react-router";
+import { connect } from 'react-redux';
+import { createComment } from '../../actions/comments'
 
+const mdp = dispatch => {
+    return {
+        createComment: comment => dispatch(createComment(comment.body, comment.videoId, comment.parentCommentId))
+    }
+}
 
 class CommentForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            comment: {
-                body: ""
-            }
+            body: "",
+            videoId: this.props.match.params.videoId,
+            parentCommentId: null,
         }
         this.update = this.update.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    update(field) {
+    update() {
         return (e) => {
-            this.setState({ [field]: e.target.value });
+            this.setState({ body: e.target.value });
         };
     }
 
     handleSubmit(e){
+        debugger
         e.preventDefault();
-        let videoId = this.props.match.params.videoId
+        this.props.createComment(this.state)
+            .done(this.props.refresh())
         this.setState({
-            comment: {videoId: videoId}
+            body: "",
+            videoId: this.props.match.params.videoId,
+            parentCommentId: null,
         })
-        this.props.createComment(this.state.comment)
     }
 
     handleReply(e){
@@ -33,13 +44,14 @@ class CommentForm extends React.Component{
     }
 
     render(){
-        let body 
-        this.state.body ? body = this.state.body : body = "" 
+        let body
+        this.state.body ? body = this.state.body : body = ""
         return(
             <div className="comment-form-section">
+                <img className="comment-form-icon" src={window.userIcon2} />
                 <form className="comment-form" onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Add a Public Comment" value={body} onChange={this.update("body")}/>
-                    <input type="submit" value="Comment"/>
+                    <input className="comment-text-input" type="text" placeholder="Add a Public Comment" value={body} onChange={this.update()}/>
+                    <input className="comment-button" type="submit" value="Comment"/>
                 </form>
             </div>
         )
@@ -47,4 +59,4 @@ class CommentForm extends React.Component{
 
 }
 
-export default CommentForm;
+export default withRouter(connect(null, mdp)(CommentForm));

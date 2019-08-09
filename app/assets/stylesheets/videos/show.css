@@ -13,7 +13,7 @@
 .video-show-section {
     padding-left: 35px;
     margin-top: 25px;
-    width: 82%;
+    width: 70%;
 }
 
 .video-show-title {
@@ -74,13 +74,45 @@
     margin-top: 30px;
 }
 
-.single-comment-author{
+.section-one-bottom-half{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -23px;
+}
+
+.section-one{
+    padding-bottom: 15px;
+}
+
+.likebar{
+    margin-right: 20vw;
+    padding-bottom: 15px;
+    border-bottom: solid black 2px;
+    width: 100px;
+    display: flex;
+}
+
+.fa-thumbs-down{
+    position: relative;
+    top: 8px;
+    left: 30px;
+}
+
+.fa-thumbs-up{
+    position: relative;
+    top: 5px;
+}
+
+.num-likes{
+    margin-left: 10px;
+}
+
+.num-dislikes{
+    padding-left: 10px;
 
 }
 
-.single-comment-body{
 
-}
 
 .video-show-index{
     float: right;
@@ -88,4 +120,5 @@
 
 .comment-heading{
     font-family: arial, sans-serif;
+    margin-bottom: 10px;
 }

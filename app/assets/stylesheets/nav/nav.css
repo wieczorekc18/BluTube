@@ -11,9 +11,17 @@
     z-index: 1;
 }
 
+.bars-button{
+    margin: 20px;
+}
 
 .fa-bars {
-    margin-left: 15px;
+    
+    position: absolute;
+    z-index: 7;
+    left: 25px;
+    top: 25px;
+
 }
 
 .nav-border {

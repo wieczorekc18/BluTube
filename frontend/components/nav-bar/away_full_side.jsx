@@ -1,13 +1,25 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 
 const AwayFullSide = () => {
     return(
-        <div className="away-full-backgroun">
+        <div className="away-full-background">
             <div className="away-full-side">
-                <div className="full-away-home sidebar-hover"><i className="fas fa-home full-away-home-icon"></i>Home</div>
-                <div className="full-git-away sidebar-hover"><i className="fab fa-github full-away-git-icon"></i>Github</div>
-                <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
+                <Link className="logo-side" to="/">
+                    <img className="blutube-logo" src={window.blutubeSideLogoURL} alt="logo-here" />
+                </Link>
+                <div className="side-nav-away">
+                    <Link to="/">
+                        <div className="full-away-home sidebar-hover">
+                            <i className="fas fa-home full-away-home-icon"></i>Home
+                        </div>
+                    </Link>
+                    <div className="full-git-away sidebar-hover"><i className="fab fa-github full-away-git-icon"></i>Github</div>
+                    <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
+                </div>
+            </div>
+            <div className="faded-black-background">
+                <img className="black-back" src={window.blackBack} alt="black-back-here" />
             </div>
         </div>
     )

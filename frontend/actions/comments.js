@@ -11,5 +11,8 @@ const receiveComment = (comment) => {
 
 export const createComment = (body, videoId, parentCommentId) => dispatch => {
     return CommentUtil.createComment(body, videoId, parentCommentId)
-        .then(comment => dispatch(receiveComment(comment)))
+        .then(comment => {
+            debugger
+            return dispatch(receiveComment(comment))
+        })
 }
