@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# BluTube
 
-* Ruby version
+BluTube is designed as a clone of the popular video streaming website YouTube
 
-* System dependencies
+#### Check it out!
 
-* Configuration
+link to BluTube https://blutube-1.herokuapp.com/#/
 
-* Database creation
+## Features
 
-* Database initialization
+#### User login/signup
+* styled after Google's method of authenticating YouTube users
+* Login as the Demo user (fields are already filled out properly)
+* Demo user's email 
+    * demouser@gmail.com
+* Demo user's password
+    * password123!
+* Signup by clicking create account and filling out the required fields
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Videos
 
-* Deployment instructions
+* All visitors to the site can view videos and navigate the site
+* Only logged-in users can upload videos
 
-* ...
+    
+#### Comments
+* Post comments on a video when logged in
+* All visitors can view comments
+
+
+
+
+
