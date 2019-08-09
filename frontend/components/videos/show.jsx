@@ -77,31 +77,34 @@ class VideoShow extends React.Component {
             <div className="video-show-page">
                 <div className="video-show-section">
                     <div className="video-player">
-                        <video src={video.vid} controls></video>
+                        <video className="actual-video" src={video.vid} controls></video>
                         {/* <div className="video-placeholder"><img src={window.bellyflopthumb} alt="" /></div> */}
                     </div>
-                    <div className="section-one">
-                        <div className="section-one-left">
-                            <div className="video-show-title">{video.title}</div>
-                            <div className="section-one-bottom-half">
-                                <div className="video-show-view-counter">{video.views} Views</div>
-                                <div className="section-one-right">
-                                    <div className="likebar">
-                                        <i className="fas fa-thumbs-up"><span className="num-likes">{likes}</span></i><i className="fas fa-thumbs-down"><span className="num-dislikes">{dislikes}</span></i> 
+                    <div className="info-section">
+                        <div className="section-one">
+                            <div className="section-one-left">
+                                <div className="video-show-title">{video.title}</div>
+                                <div className="section-one-bottom-half">
+                                    <div className="video-show-view-counter">{video.views} Views</div>
+                                    <div className="section-one-right">
+                                        <div className="likebar">
+                                            <i className="fas fa-thumbs-up"><span className="num-likes">{likes}</span></i><i className="fas fa-thumbs-down"><span className="num-dislikes">{dislikes}</span></i> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <hr className="horiz-line"/>
+                    
+                        <div className="uploader-details-section">
+                            <div className="video-show-uploader-icon">{video.uploader.username[0].toUpperCase()}</div >
+                            <div className="video-show-uploader">{video.uploader.username}</div >
+                            {/* <span className="video-show-sub-button">Subscribe</span> */}
+                            <div className="video-show-upload-date">{uploadDate}</div>
+                        </div>
+                        <div className="video-show-description">{ video.description }</div >
+                        <hr className="horiz-line" />
                     </div>
-                    <hr className="horiz-line"/>
-                    <div className="uploader-details-section">
-                        <div className="video-show-uploader-icon">{video.uploader.username[0].toUpperCase()}</div >
-                        <div className="video-show-uploader">{video.uploader.username}</div >
-                        {/* <span className="video-show-sub-button">Subscribe</span> */}
-                        <div className="video-show-upload-date">{uploadDate}</div>
-                    </div>
-                    <div className="video-show-description">{ video.description }</div >
-                    <hr className="horiz-line" />
                     <br/>
                     <div className="comment-heading">
                         {comments.length} Comments
