@@ -4,7 +4,6 @@ import { getVideos } from '../../actions/videos'
 
 
 const msp = state => {
-    debugger
     let videos = Object.values(state.videos)
     return {
         videos: videos

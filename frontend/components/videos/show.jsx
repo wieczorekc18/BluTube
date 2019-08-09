@@ -43,7 +43,7 @@ class VideoShow extends React.Component {
     }
 
     render(){
-        debugger
+        // debugger
         let allVideos = this.props.videos.map(video => {
             return (<VideoIndexItem
                 key={`${video.id}`}
@@ -65,7 +65,7 @@ class VideoShow extends React.Component {
             })
             
         let videos = allVideos.filter((vid) => {
-            debugger
+            // debugger
             return vid.key != video.id
         })
         let likes
