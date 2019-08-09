@@ -17,7 +17,7 @@ const MainApp = () => (
         <Route exact path="/" component={VideoIndexContainer}/>
         <Switch>
             <ProtectedRoute exact path="/upload" component={VideoUploadContainer} />
-            <Route exact path="/videos/:videoId" component={VideoShowContainer}/>
+            <Route exact path="/videos/:videoId" component={VideoShowContainer} key={Math.random(0, 500)}/>
         </Switch>
     </div>
 )

@@ -37,34 +37,37 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount(){
+        this.props.getVideos();
         let videoId = this.props.match.params.videoId;
         this.props.getVideo(videoId);
     }
 
     render(){
-        // let videos = this.props.videos.map(video => {
-        //     if(this.props.video !== video){
-        //         return (<VideoIndexItem
-        //             key={`${video.id}`}
-        //             video={video}
-        //         />)
-        //     }
-        // })
-        // debugger
+        debugger
+        let allVideos = this.props.videos.map(video => {
+            return (<VideoIndexItem
+                key={`${video.id}`}
+                video={video}
+            />)
+        })
         let video;
-        this.props.video ? video = this.props.video : video = {title: "", description: "", views: "", uploader: {username: "d"}}
+        this.props.video ? video = this.props.video : video = {id: 0, title: "", description: "", views: "", uploader: {username: "d"}}
         let comments = [];
         video.comments ? comments = Object.values(video.comments) : comments = [];
         let commentDisplay = comments.map(c => {
             return(
                 <CommentIndexItem
-                    key={`${c.id}`}
-                    comment={c}
-                    refresh={this.refresh}
+                key={`${c.id}`}
+                comment={c}
+                refresh={this.refresh}
                 />
-            )
+                )
+            })
+            
+        let videos = allVideos.filter((vid) => {
+            debugger
+            return vid.key != video.id
         })
-
         let likes
         video.videoLikes ? likes = video.videoLikes : likes = 0
         let dislikes
@@ -107,10 +110,11 @@ class VideoShow extends React.Component {
                     <ul className="comment-ul">
                         {commentDisplay}
                     </ul>
-                    {/* <ul className="video-show-index">
-                        {videos}
-                    </ul> */}
                 </div>
+                <ul className="video-show-index">
+                    <h3 className="up-next">Up Next</h3>
+                    {videos}
+                </ul>
             </div>
         )
     }

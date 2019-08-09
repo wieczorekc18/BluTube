@@ -1,5 +1,7 @@
 .video-show-page{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .video-placeholder{
@@ -11,7 +13,7 @@
 }
 
 .video-show-section {
-    padding-left: 35px;
+    /* padding-left: 35px; */
     margin-top: 25px;
     width: 70%;
 }
@@ -112,13 +114,19 @@
 
 }
 
-
+.up-next{
+    font-size: 12px;
+    font-family: arial, sans-serif;
+    margin-bottom: 10px;
+}
 
 .video-show-index{
     float: right;
+    margin-left: 20px;
 }
 
 .comment-heading{
     font-family: arial, sans-serif;
     margin-bottom: 10px;
 }
+
