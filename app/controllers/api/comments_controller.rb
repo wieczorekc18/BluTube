@@ -1,4 +1,7 @@
 class Api::CommentsController < ApplicationController
+
+    before_action :ensure_logged_in, only: [:new, :create]
+
     def new
         @comment = Comment.new(video_id: params[:video_id])
     end
@@ -15,6 +18,7 @@ class Api::CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         @comment.author = current_user 
+        # debugger
         if @comment.save
             render :show
         else  

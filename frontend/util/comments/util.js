@@ -1,5 +1,5 @@
 export const createComment = (body, video_id, parent_comment_id) => {
-    debugger
+    // debugger
     return(
         $.ajax({
             method: "POST",

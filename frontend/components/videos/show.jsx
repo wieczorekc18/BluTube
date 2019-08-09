@@ -18,10 +18,11 @@ class VideoShow extends React.Component {
     }
 
     refresh(){
-        debugger
+        // debugger
         this.setState({
             refresh: Math.random(0, 50),
         })
+        return -1
     }
 
 
@@ -49,7 +50,7 @@ class VideoShow extends React.Component {
         //         />)
         //     }
         // })
-        debugger
+        // debugger
         let video;
         this.props.video ? video = this.props.video : video = {title: "", description: "", views: "", uploader: {username: "d"}}
         let comments = [];
