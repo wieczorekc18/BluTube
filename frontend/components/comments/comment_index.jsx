@@ -1,11 +1,12 @@
 import React from 'react'
-import { getComments } from '../../actions/comments'
+import { getComments, clearComments } from '../../actions/comments'
 import { withRouter } from "react-router";
 import { connect } from 'react-redux';
 import CommentIndexItem from './comment_index_item'
 import CommentForm from './comment_form'
 
-const msp = (state, ownProps) => {
+
+const msp = (state) => {
     debugger
     let comments = Object.values(state.comments)
     return {
@@ -15,7 +16,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        getComments: videoId => dispatch(getComments(videoId))
+        getComments: videoId => dispatch(getComments(videoId)),
+        clearComments: () => dispatch(clearComments())
     }
 }
 
@@ -27,9 +29,13 @@ class CommentIndex extends React.Component{
             let videoId = this.props.match.params.videoId
             this.props.getComments(videoId)
         }
+        if(prevProps.match.params.videoId !== this.props.match.params.videoId){
+            this.props.clearComments();
+            let videoId = this.props.match.params.videoId
+            this.props.getComments(videoId)
+        }
     }
     componentDidMount(){
-        debugger
         let videoId = this.props.match.params.videoId
         this.props.getComments(videoId)
     }
