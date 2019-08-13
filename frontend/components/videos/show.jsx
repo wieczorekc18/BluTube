@@ -1,30 +1,26 @@
 import React from 'react'
-import CommentIndexItem from './comment_index_item'
 import VideoIndexItem from './index_item'
-import CommentForm from './comment_form'
-
-
+import CommentIndex from '../comments/comment_index'
 
 
 class VideoShow extends React.Component {
 
     constructor(props){
         super(props)
-        this.state = {
-            refresh: Math.random(0, 50),
-        }
         this.formatDate = this.formatDate.bind(this);
-        this.refresh = this.refresh.bind(this);
     }
 
-    refresh(){
+    componentDidUpdate(prevProps){
         // debugger
-        this.setState({
-            refresh: Math.random(0, 50),
-        })
-        return -1
-    }
-
+        let preVid
+        let vid 
+        prevProps.video ? preVid = prevProps.video : preVid = {id: -1}
+        this.props.video ? vid = this.props.video : vid = {id: -1}
+        if(preVid.id !== vid.id){
+            let videoId = this.props.match.params.videoId;
+            this.props.getVideo(videoId);
+        }
+    }  
 
     formatDate(ts="2018-18-18-18"){
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -37,6 +33,7 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount(){
+        // debugger
         this.props.getVideos();
         let videoId = this.props.match.params.videoId;
         this.props.getVideo(videoId);
@@ -52,17 +49,6 @@ class VideoShow extends React.Component {
         })
         let video;
         this.props.video ? video = this.props.video : video = {id: 0, title: "", description: "", views: "", uploader: {username: "d"}}
-        let comments = [];
-        video.comments ? comments = Object.values(video.comments) : comments = [];
-        let commentDisplay = comments.map(c => {
-            return(
-                <CommentIndexItem
-                key={`${c.id}`}
-                comment={c}
-                refresh={this.refresh}
-                />
-                )
-            })
             
         let videos = allVideos.filter((vid) => {
             // debugger
@@ -106,13 +92,14 @@ class VideoShow extends React.Component {
                         <hr className="horiz-line" />
                     </div>
                     <br/>
-                    <div className="comment-heading">
+                    {/* <div className="comment-heading">
                         {comments.length} Comments
-                    </div>
-                    <CommentForm refresh={this.refresh}/>
+                    </div> */}
+                    <CommentIndex/>
+                    {/* <CommentForm/>
                     <ul className="comment-ul">
                         {commentDisplay}
-                    </ul>
+                    </ul> */}
                 </div>
                 <ul className="video-show-index">
                     <h3 className="up-next">Up Next</h3>
@@ -122,6 +109,9 @@ class VideoShow extends React.Component {
         )
     }
 }
+
+//componentdidmount for index
+
 
 
 export default VideoShow;

@@ -54,7 +54,7 @@ class UploadVideo extends React.Component{
     }
 
     handleSubmit(e){
-        // debugger
+        debugger
         e.preventDefault
         const formData = new FormData();
         formData.append('video[title]', this.state.title)
@@ -62,7 +62,7 @@ class UploadVideo extends React.Component{
         formData.append('video[video]', this.state.videoFile)
         formData.append('video[thumbnail]', this.state.thumbFile)
         this.props.postVideo(formData).then(res => {
-                // debugger
+                debugger
                 return this.props.history.push(`/videos/${res.video.id}`)
         })
     }

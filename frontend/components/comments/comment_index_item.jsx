@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const CommentIndexItem = (props) => {
     let author
     props.comment.author ? author = props.comment.author : author = {username: "asd"}

@@ -3,11 +3,12 @@ import VideoShow from './show'
 import { getVideo, getVideos } from '../../actions/videos'
 
 const msp = (state, ownProps) => {
+    // debugger
     let allVideos = Object.values(state.videos)
     let videoId = ownProps.match.params.videoId
     let video = state.videos[videoId]
-    let videos = allVideos.filter((video) => {
-        return video.id != videoId
+    let videos = allVideos.filter((vid) => {
+        return vid.id != videoId
     })
     return {
         video: video,

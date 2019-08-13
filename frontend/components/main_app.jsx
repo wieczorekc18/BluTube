@@ -12,12 +12,12 @@ import VideoUploadContainer from './videos/upload_container'
 const MainApp = () => (
     <div>
         
-        <Route path="/" component={NavbarContainer} key={Math.random(0,500)}/> 
+        <Route path="/" component={NavbarContainer} key={Math.random(0, 500)}/> {/*key={Math.random(0, 500)}*/}
         <Route exact path="/" component={Home} />
         <Route exact path="/" component={VideoIndexContainer}/>
         <Switch>
             <ProtectedRoute exact path="/upload" component={VideoUploadContainer} />
-            <Route exact path="/videos/:videoId" component={VideoShowContainer} key={Math.random(0, 500)}/>
+            <Route exact path="/videos/:videoId" component={VideoShowContainer} /> {/*key={Math.random(0, 500)}*/}
         </Switch>
     </div>
 )

@@ -31,7 +31,6 @@ class CommentForm extends React.Component{
         // debugger
         e.preventDefault();
         this.props.createComment(this.state)
-            .done(this.props.refresh())
         this.setState({
             body: "",
             videoId: this.props.match.params.videoId,

@@ -7,18 +7,17 @@ class Api::CommentsController < ApplicationController
     end
 
     def index
-        @comments = Comment.all.select do |comment|
+        @comments = Comment.all.includes(:author).select do |comment|
             # comment.parent_comment_id.nil?
-            comment.video_id == params(:video_id)
-            comment.includes(:child_comments)
-            comment.includes(:author)
+            comment.video_id == params[:video_id].to_i
+            # comment.includes(:child_comments)
+            # comment.includes(:author)
         end
     end
 
     def create
         @comment = Comment.new(comment_params)
         @comment.author = current_user 
-        # debugger
         if @comment.save
             render :show
         else  

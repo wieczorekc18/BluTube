@@ -7,7 +7,12 @@ const VideosReducer = (oldState = {}, action) => {
 
     switch(action.type){
         case RECEIVE_ALL_VIDEOS:
-            return action.videos;
+            const newState = {};
+            let allVids = Object.values(action.videos)
+            allVids.forEach(video => {
+                newState[video.id] = video
+            })
+            return merge({}, oldState, newState)
         case RECEIVE_VIDEO:
             return merge({}, oldState, { [action.video.id]: action.video });
         default:
