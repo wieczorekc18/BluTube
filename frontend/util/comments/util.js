@@ -1,6 +1,6 @@
 
 export const getComments = (video_id) => {
-    debugger
+  //debugger
     return(
         $.ajax({
             method: "GET",

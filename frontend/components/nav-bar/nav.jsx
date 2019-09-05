@@ -145,6 +145,12 @@ class Navbar extends React.Component {
                         {/* <i className="fa fa-th" aria-hidden="true"></i>
                         <i className="fas fa-envelope-square" aria-hidden="true"></i>
                         <i className="fa fa-bell" aria-hidden="true"></i> */}
+                        {/* <a href="https://github.com/wieczorekc18">
+                            <i className="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
+                            <i className="fab fa-linkedin"></i>
+                        </a> */}
                         <div onClick={this.showLogout} className="user-icon">{currentUser.username[0].toUpperCase()}
                             {logout}
                         </div> 

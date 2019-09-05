@@ -14,8 +14,13 @@ const AwayFullSide = () => {
                             <i className="fas fa-home full-away-home-icon"></i>Home
                         </div>
                     </Link>
-                    <div className="full-git-away sidebar-hover"><i className="fab fa-github full-away-git-icon"></i>Github</div>
-                    <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
+                    <a href="https://github.com/wieczorekc18">
+                        <div className="full-git-away sidebar-hover"><i className="fab fa-github full-away-git-icon"></i>Github</div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
+                        <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
+                    </a>
+                    
                 </div>
             </div>
             <div className="faded-black-background">

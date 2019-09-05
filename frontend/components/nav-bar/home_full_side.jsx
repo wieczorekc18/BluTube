@@ -5,8 +5,12 @@ const HomeFullSide = () => {
     return(
         <div className="home-full-side">
             <div className="full-home-home sidebar-hover"><i className="fas fa-home full-home-icon"></i>Home</div>
-            <div className="full-git-home sidebar-hover"><i className="fab fa-github full-git-icon"></i>Github</div>
-            <div className="full-linkedin-home sidebar-hover"><i className="fab fa-linkedin full-linkedin-icon"></i>LinkedIn</div>
+            <a href="https://github.com/wieczorekc18">
+                <div className="full-git-home sidebar-hover"><i className="fab fa-github full-git-icon"></i>Github</div>
+            </a>
+            <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
+                <div className="full-linkedin-home sidebar-hover"><i className="fab fa-linkedin full-linkedin-icon"></i>LinkedIn</div>
+            </a>
         </div>
     )
 }

@@ -5,14 +5,17 @@ const HomePartSide = () => {
     return(
         <div className="home-part-side">
             <div className="collapsed-home-home sidebar-hover"><i className="fas fa-home part-home-icon"></i><br />Home</div>
-            <div className="collapsed-git-icon sidebar-hover"><i className="fab fa-github"></i><br />Github</div>
-            <div className="collapsed-linkedin-icon sidebar-hover"><i className="fab fa-linkedin"></i><br />LinkedIn</div>
+            <a href="https://github.com/wieczorekc18">
+                <div className="collapsed-git-icon sidebar-hover"><i className="fab fa-github"></i><br />Github</div>
+            </a>
+            <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
+                <div className="collapsed-linkedin-icon sidebar-hover"><i className="fab fa-linkedin"></i><br />LinkedIn</div>
+            </a>
         </div>
     )
 }
 
 export default HomePartSide;
-
 
 
 // {/* <div className="collapsed-trending-icon"><i className="fas fa-fire"></i>Trending</div>
