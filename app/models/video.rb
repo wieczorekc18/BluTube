@@ -32,8 +32,7 @@ class Video < ApplicationRecord
         class_name: :Comment
 
     has_many :likes,
-        as: :likeable,
-        class_name: :Like
+        as: :likeable
 
 
     validate :video_size_validation
@@ -51,6 +50,31 @@ class Video < ApplicationRecord
         end
     end
 
+    def incrementViews
+        self.views += 1
+        self.save
+        self.views
+    end
+
+    # def calcLikes        
+    #     total_likes = 0
+    #     total_value = 0
+    #     self.likes.each do |like|
+    #         total_likes += 1
+    #         total_value += like.value
+    #     end
+    #     if total_value > 0
+    #         video_dislikes = (total_likes - total_value)/2
+    #         video_likes = total_likes - video_dislikes 
+    #     elsif total_value < 0
+    #         video_likes = (total_likes - total_value)/2
+    #         video_dislikes = total_likes - video_likes
+    #     else 
+    #         video_likes = 0
+    #         video_dislikes = 0
+    #     end
+    #     {likes: video_likes, dislikes: video_dislikes}
+    # end
 
     def thumb_validation
         if thumbnail.attached?

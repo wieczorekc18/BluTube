@@ -11,6 +11,7 @@ require 'open-uri'
 User.destroy_all
 Video.destroy_all
 Comment.destroy_all
+Like.destroy_all
 
 hunter = User.create!(
   username: 'hunter12',

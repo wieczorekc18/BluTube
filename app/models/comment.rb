@@ -37,7 +37,6 @@ class Comment < ApplicationRecord
         optional: true
 
     has_many :likes,
-        as: :likeable,
-        class_name: :Like
+        as: :likeable
 
 end

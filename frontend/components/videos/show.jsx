@@ -1,6 +1,7 @@
 import React from 'react'
 import VideoIndexItem from './index_item'
 import CommentIndex from '../comments/comment_index'
+import { Redirect } from 'react-router';
 
 
 class VideoShow extends React.Component {
@@ -8,6 +9,70 @@ class VideoShow extends React.Component {
     constructor(props){
         super(props)
         this.formatDate = this.formatDate.bind(this);
+        this.handleLike = this.handleLike.bind(this);
+        this.handleDislike = this.handleDislike.bind(this);
+    }
+
+    handleLike(e){
+        e.preventDefault()
+        let liked = false 
+        let disliked = false
+        let videoId = this.props.match.params.videoId;
+        let myLike
+        debugger
+        if(this.props.currentUser){
+            this.props.likes.forEach(like => {
+                if(like.user_id === this.props.currentUser.id){
+                    if(like.value === -1){
+                        disliked = true
+                        myLike = like
+                    } else {
+                        liked = true
+                        myLike = like
+                    }
+                }
+            })
+            if(liked){
+                this.props.deleteVideoLike(myLike.id, videoId)
+            }else if(disliked){
+                this.props.updateVideoLike(myLike.id, videoId)
+            }else{
+                this.props.createVideoLike(1, videoId)
+            }
+        }else{
+            <Redirect to="/login"/>
+        }
+    }
+
+    handleDislike(e){
+        e.preventDefault()
+        let liked = false
+        let disliked = false
+        let videoId = this.props.match.params.videoId;
+        let myLike
+        debugger
+        if (this.props.currentUser) {
+            this.props.likes.forEach(like => {
+                if (like.user_id === this.props.currentUser.id) {
+                    if (like.value === -1) {
+                        disliked = true
+                        myLike = like
+                    } else {
+                        liked = true
+                        myLike = like
+                    }
+                }
+            })
+            if (liked) {
+                this.props.updateVideoLike(myLike.id, videoId)
+            } else if (disliked) {
+                this.props.deleteVideoLike(myLike.id, videoId)
+            } else {
+                this.props.createVideoLike(-1, videoId)
+            }
+        }else{
+            <Redirect to="/login" />
+        }
     }
 
     componentDidUpdate(prevProps){
@@ -17,9 +82,18 @@ class VideoShow extends React.Component {
         prevProps.video ? preVid = prevProps.video : preVid = {id: -1}
         this.props.video ? vid = this.props.video : vid = {id: -1}
         if(preVid.id !== vid.id){
+            debugger
             let videoId = this.props.match.params.videoId;
+            // this.props.clearLikes();
+            // this.props.getVideoLikes(videoId);
             this.props.getVideo(videoId);
         }
+        // if(prevProps.likes.length !== this.props.likes.length){
+        //     debugger
+        //     let videoId = this.props.match.params.videoId;
+        //     this.props.clearLikes();
+        //     this.props.getVideoLikes(videoId);
+        // }
     }  
 
     formatDate(ts="2018-18-18-18"){
@@ -36,6 +110,8 @@ class VideoShow extends React.Component {
         // debugger
         this.props.getVideos();
         let videoId = this.props.match.params.videoId;
+        // this.props.clearLikes();
+        // this.props.getVideoLikes(videoId);
         this.props.getVideo(videoId);
     }
 
@@ -55,9 +131,34 @@ class VideoShow extends React.Component {
             return vid.key != video.id
         })
         let likes
-        video.videoLikes ? likes = video.videoLikes : likes = 0
         let dislikes
-        video.videoDislikes ? dislikes = video.videoDislikes : dislikes = 0
+        let likeStyle
+        let dislikeStyle
+        let totalLikes
+        this.props.likes ? totalLikes = this.props.likes : totalLikes = []
+        debugger
+        if(totalLikes.length === 0){
+            likeStyle = 50
+            dislikeStyle = 50
+            likes = 0
+            dislikes = 0
+        }else{
+            let totalValue = 0
+            totalLikes.forEach(like => {
+                totalValue += like.value
+            })
+            debugger
+            if(totalValue > 0){
+                dislikes = (totalLikes.length - totalValue)/2
+                likes = totalLikes.length - dislikes
+            }else{
+                likes = (totalLikes.length - totalValue) / 2
+                dislikes = totalLikes.length - likes
+            }
+            likeStyle = (likes/(likes+dislikes))*100
+            dislikeStyle = (dislikes / (likes + dislikes)) * 100
+        }
+        debugger
         let uploadDate = this.formatDate(video.created_at)
         return(
             <div className="video-show-page">
@@ -73,9 +174,27 @@ class VideoShow extends React.Component {
                                 <div className="section-one-bottom-half">
                                     <div className="video-show-view-counter">{video.views} Views</div>
                                     <div className="section-one-right">
-                                        <div className="likebar">
-                                            <i className="fas fa-thumbs-up"><span className="num-likes">{likes}</span></i><i className="fas fa-thumbs-down"><span className="num-dislikes">{dislikes}</span></i> 
+                                        <div className="fullbar">
+                                            <div className="likebar">
+                                                <i className="fas fa-thumbs-up" onClick={this.handleLike}>
+                                                    <span className="num-likes">{likes}</span>
+                                                </i>
+                                            </div>
+                                            <div className="dislikebar">
+                                                <i className="fas fa-thumbs-down" onClick={this.handleDislike}>
+                                                    <span className="num-dislikes">{dislikes}</span>
+                                                </i> 
+                                            </div>
                                         </div>
+                                        <div className="like-borders">
+                                            <div className="like-border" style={{ width: `${likeStyle}%`}}>
+                                            
+                                            </div>
+                                            <div className="dislike-border" style={{width: `${dislikeStyle}%`}}>
+
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

@@ -2,6 +2,13 @@ import React from 'react';
 import { withRouter } from "react-router";
 import { connect } from 'react-redux';
 import { createComment } from '../../actions/comments'
+import { Redirect } from 'react-router';
+
+const msp = state => {
+    return {
+        currentUser: state.session.currentUser, //important
+    }
+};
 
 const mdp = dispatch => {
     return {
@@ -30,12 +37,18 @@ class CommentForm extends React.Component{
     handleSubmit(e){
         // debugger
         e.preventDefault();
-        this.props.createComment(this.state)
-        this.setState({
-            body: "",
-            videoId: this.props.match.params.videoId,
-            parentCommentId: null,
-        })
+        debugger
+        if(this.props.currentUser){
+            debugger
+            this.props.createComment(this.state)
+            this.setState({
+                body: "",
+                videoId: this.props.match.params.videoId,
+                parentCommentId: null,
+            })
+        }else{
+            <Redirect to="/login" />
+        }
     }
 
     handleReply(e){
@@ -58,4 +71,4 @@ class CommentForm extends React.Component{
 
 }
 
-export default withRouter(connect(null, mdp)(CommentForm));
+export default withRouter(connect(msp, mdp)(CommentForm));

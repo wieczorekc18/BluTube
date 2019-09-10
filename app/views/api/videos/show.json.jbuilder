@@ -1,6 +1,8 @@
 json.extract! @video, :id, :title, :description, :created_at, :uploader, :views
 json.vid url_for(@video.video)
 
+# json.extract! @likes, :likes, :dislikes
+
 # json.comments do
 #     @video.comments.each do |comment|
 #         json.set! comment.id do

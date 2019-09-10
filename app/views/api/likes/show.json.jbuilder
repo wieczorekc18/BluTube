@@ -1,0 +1,1 @@
+json.extract! @like, :id, :value, :likeable_type, :likeable_id, :user_id

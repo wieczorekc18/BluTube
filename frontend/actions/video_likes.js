@@ -1,31 +1,52 @@
 import * as LikeUtil from '../util/likes/util';
 
-export const RECEIVE_LIKE = "RECEIVE_LIKE";
-export const REMOVE_LIKE = "REMOVE_LIKE";
+export const RECEIVE_VIDEO_LIKES = "RECEIVE_VIDEO_LIKES"
+export const RECEIVE_VIDEO_LIKE = "RECEIVE_VIDEO_LIKE";
+export const REMOVE_VIDEO_LIKE = "REMOVE_VIDEO_LIKE";
+export const CLEAR_LIKES = "CLEAR_LIKES"
 
 
-const receiveLike = (like) => {
-    return{
-        type: RECEIVE_LIKE,
-        like: like
-    }
-}
-
-const removeLike = () => {
+const receiveVideoLikes = (videoLikes) => {
+    debugger
     return {
-        type: REMOVE_LIKE,
+        type: RECEIVE_VIDEO_LIKES,
+        videoLikes: videoLikes
     }
 }
 
+const receiveVideoLike = (videoLike) => {
+    debugger
+    return{
+        type: RECEIVE_VIDEO_LIKE,
+        videoLike: videoLike
+    }
+}
+
+const removeVideoLike = () => {
+    return {
+        type: REMOVE_VIDEO_LIKE,
+    }
+}
+
+export const clearLikes = () => {
+    return {
+        type: CLEAR_LIKES,
+    }
+}
+
+export const getVideoLikes = (video_id) => dispatch => {
+    return LikeUtil.getVideoLikes(video_id).then(videoLikes => dispatch(receiveVideoLikes(videoLikes)))
+}
 
 export const createVideoLike = (value, video_id) => dispatch => {
-    return LikeUtil.createVideoLike(value, video_id).then(like => dispatch(receiveLike(like)))
+    debugger
+    return LikeUtil.createVideoLike(value, video_id).then(like => dispatch(receiveVideoLike(like)))
 }
 
-export const updateVideoLike = (id, value, video_id) => dispatch => {
-    return LikeUtil.updateVideoLike(id, value, video_id).then(like => dispatch(receiveLike(like)))
+export const updateVideoLike = (id, video_id) => dispatch => {
+    return LikeUtil.updateVideoLike(id, value, video_id).then(like => dispatch(receiveVideoLike(like)))
 }
 
 export const deleteVideoLike = (id, video_id) => dispatch => {
-    return LikeUtil.deleteVideoLike(id, video_id).then(() => dispatch(removeLike()))
+    return LikeUtil.deleteVideoLike(id, video_id).then(() => dispatch(removeVideoLike()))
 }

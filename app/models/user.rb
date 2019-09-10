@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
     has_many :likes, 
         foreign_key: :user_id,
-        class_name: :User
+        class_name: :Like
 
     after_initialize :ensure_session_token, :assign_color
 

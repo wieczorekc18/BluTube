@@ -5,6 +5,8 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
+        @video.incrementViews
+        # @likes = @video.calcLikes
         # @video = Video.includes(:likes, comments: :author).find(params[:id])
     end
 

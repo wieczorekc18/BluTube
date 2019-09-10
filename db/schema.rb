@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_211305) do
+ActiveRecord::Schema.define(version: 2019_09_09_144733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_211305) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "value", null: false
+    t.integer "value", default: 0, null: false
     t.string "likeable_type"
     t.bigint "likeable_id"
     t.datetime "created_at", null: false

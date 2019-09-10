@@ -101,18 +101,50 @@
     padding-bottom: 15px;
 }
 
-.likebar{
+.fullbar{
+    display: flex;
     margin-right: 20vw;
-    padding-bottom: 15px;
-    border-bottom: solid black 2px;
+}
+
+.likebar{
+    /* padding-bottom: 15px;
+    border-bottom: solid black 2px; */
+    display: flex;
+}
+
+.dislikebar{
+    /* padding-bottom: 15px;
+    border-bottom: solid rgb(202, 200, 200) 2px; */
+    display: flex;
+}
+
+.like-borders{
+    padding-top: 15px;
     width: 100px;
     display: flex;
+}
+
+.like-border{
+    /* width: 50px; */
+    border-bottom: solid black 2px;
+}
+.dislike-border{
+    /* width: 50px; */
+    border-bottom: solid rgb(168, 166, 166) 2px;
 }
 
 .fa-thumbs-down{
     position: relative;
     top: 8px;
-    left: 30px;
+    left: 35px;
+}
+
+.fa-thumbs-down:hover{
+    cursor: pointer;
+}
+
+.fa-thumbs-up:hover{
+    cursor: pointer;
 }
 
 .fa-thumbs-up{
@@ -144,4 +176,3 @@
     font-family: arial, sans-serif;
     margin-bottom: 10px;
 }
-
