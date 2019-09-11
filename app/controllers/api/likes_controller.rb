@@ -4,7 +4,7 @@ class Api::LikesController < ApplicationController
     def create
         @like = Like.new(like_params)
         @like.user_id = current_user.id
-        debugger
+        # debugger
         if @like.save
             render :show
         else  
@@ -30,8 +30,7 @@ class Api::LikesController < ApplicationController
 
     def update
         @like = current_user.likes.find(params[:id])
-        @like.value -= @like.value
-        debugger
+        @like.value = -@like.value
         if @like.save 
             render :show
         else  
@@ -41,12 +40,14 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        @like = current_user.likes.find(params[:id])
-        debugger
-        if @like
-            @like.destroy
+        like = current_user.likes.find(params[:id])
+        # debugger
+        if like
+            @id = like.id
+            like.destroy
+            # debugger
+            render json: @id
         end
-        render :index
     end
 
     private

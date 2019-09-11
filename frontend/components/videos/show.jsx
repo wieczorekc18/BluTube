@@ -33,7 +33,9 @@ class VideoShow extends React.Component {
                 }
             })
             if(liked){
+                debugger
                 this.props.deleteVideoLike(myLike.id, videoId)
+                    // you're here
             }else if(disliked){
                 this.props.updateVideoLike(myLike.id, videoId)
             }else{
@@ -84,8 +86,8 @@ class VideoShow extends React.Component {
         if(preVid.id !== vid.id){
             debugger
             let videoId = this.props.match.params.videoId;
-            // this.props.clearLikes();
-            // this.props.getVideoLikes(videoId);
+            this.props.clearLikes();
+            this.props.getVideoLikes(videoId);
             this.props.getVideo(videoId);
         }
         // if(prevProps.likes.length !== this.props.likes.length){
@@ -110,8 +112,8 @@ class VideoShow extends React.Component {
         // debugger
         this.props.getVideos();
         let videoId = this.props.match.params.videoId;
-        // this.props.clearLikes();
-        // this.props.getVideoLikes(videoId);
+        this.props.clearLikes();
+        this.props.getVideoLikes(videoId);
         this.props.getVideo(videoId);
     }
 
@@ -132,6 +134,8 @@ class VideoShow extends React.Component {
         })
         let likes
         let dislikes
+        let likeClass = "no-color"
+        let dislikeClass = "no-color"
         let likeStyle
         let dislikeStyle
         let totalLikes
@@ -146,14 +150,26 @@ class VideoShow extends React.Component {
             let totalValue = 0
             totalLikes.forEach(like => {
                 totalValue += like.value
+                if (like.user_id === this.props.currentUser.id) {
+                    if (like.value === -1) {
+                        likeClass = "no-color"
+                        dislikeClass = "color"
+                    } else {
+                        dislikeClass = "no-color"
+                        likeClass = "color"
+                    }
+                }else{
+                    likeClass = "no-color"
+                    dislikeClass = "no-color"
+                }
             })
             debugger
             if(totalValue > 0){
                 dislikes = (totalLikes.length - totalValue)/2
                 likes = totalLikes.length - dislikes
             }else{
-                likes = (totalLikes.length - totalValue) / 2
-                dislikes = totalLikes.length - likes
+                dislikes = (totalLikes.length - totalValue) / 2
+                likes = totalLikes.length - dislikes
             }
             likeStyle = (likes/(likes+dislikes))*100
             dislikeStyle = (dislikes / (likes + dislikes)) * 100
@@ -176,14 +192,18 @@ class VideoShow extends React.Component {
                                     <div className="section-one-right">
                                         <div className="fullbar">
                                             <div className="likebar">
-                                                <i className="fas fa-thumbs-up" onClick={this.handleLike}>
-                                                    <span className="num-likes">{likes}</span>
-                                                </i>
+                                                <p className={likeClass}>
+                                                    <i className="fas fa-thumbs-up" onClick={this.handleLike}>
+                                                        <span className="num-likes">{likes}</span>
+                                                    </i>
+                                                </p>
                                             </div>
                                             <div className="dislikebar">
-                                                <i className="fas fa-thumbs-down" onClick={this.handleDislike}>
-                                                    <span className="num-dislikes">{dislikes}</span>
-                                                </i> 
+                                                <p className={dislikeClass}>
+                                                    <i className="fas fa-thumbs-down" onClick={this.handleDislike}>
+                                                        <span className="num-dislikes">{dislikes}</span>
+                                                    </i> 
+                                                </p>
                                             </div>
                                         </div>
                                         <div className="like-borders">

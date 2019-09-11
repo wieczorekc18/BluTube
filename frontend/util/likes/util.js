@@ -1,5 +1,5 @@
 export const createVideoLike = (value, video_id) => {
-    debugger
+    // debugger
     return(
         $.ajax({
             method: "POST",
@@ -16,29 +16,35 @@ export const createVideoLike = (value, video_id) => {
 }
 
 
-export const updateVideoLike = (id, video_id) => (
-    $.ajax({
-        method: "PATCH",
-        url: `/api/videos/${video_id}/likes/${id}`,
-        data: {
-            like: {
-                likeable_type: 'Video',
-                likeable_id: video_id
+export const updateVideoLike = (id, video_id) => {
+    // debugger
+    return(
+        $.ajax({
+            method: "PATCH",
+            url: `/api/videos/${video_id}/likes/${id}`,
+            data: {
+                like: {
+                    likeable_type: 'Video',
+                    likeable_id: video_id
+                }
             }
-        }
-    })
-)
+        })
+    )
+}
 
 
-export const deleteVideoLike = (id, video_id) => (
-    $.ajax({
-        method: "DELETE",
-        url: `/api/videos/${video_id}/likes/${id}`
-    })
-)
+export const deleteVideoLike = (id, video_id) => {
+    // debugger 
+    return (
+        $.ajax({
+            method: "DELETE",
+            url: `/api/videos/${video_id}/likes/${id}`
+        })
+    )
+}
 
 export const getVideoLikes = (video_id) => {
-    debugger 
+    // debugger 
     return(
         $.ajax({
             method: "GET",
