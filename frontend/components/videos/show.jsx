@@ -19,7 +19,7 @@ class VideoShow extends React.Component {
         let disliked = false
         let videoId = this.props.match.params.videoId;
         let myLike
-        debugger
+        // debugger
         if(this.props.currentUser){
             this.props.likes.forEach(like => {
                 if(like.user_id === this.props.currentUser.id){
@@ -33,7 +33,7 @@ class VideoShow extends React.Component {
                 }
             })
             if(liked){
-                debugger
+                // debugger
                 this.props.deleteVideoLike(myLike.id, videoId)
                     // you're here
             }else if(disliked){
@@ -52,7 +52,7 @@ class VideoShow extends React.Component {
         let disliked = false
         let videoId = this.props.match.params.videoId;
         let myLike
-        debugger
+        // debugger
         if (this.props.currentUser) {
             this.props.likes.forEach(like => {
                 if (like.user_id === this.props.currentUser.id) {
@@ -84,7 +84,7 @@ class VideoShow extends React.Component {
         prevProps.video ? preVid = prevProps.video : preVid = {id: -1}
         this.props.video ? vid = this.props.video : vid = {id: -1}
         if(preVid.id !== vid.id){
-            debugger
+            // debugger
             let videoId = this.props.match.params.videoId;
             this.props.clearLikes();
             this.props.getVideoLikes(videoId);
@@ -140,7 +140,7 @@ class VideoShow extends React.Component {
         let dislikeStyle
         let totalLikes
         this.props.likes ? totalLikes = this.props.likes : totalLikes = []
-        debugger
+        // debugger
         if(totalLikes.length === 0){
             likeStyle = 50
             dislikeStyle = 50
@@ -163,7 +163,7 @@ class VideoShow extends React.Component {
                     dislikeClass = "no-color"
                 }
             })
-            debugger
+            // debugger
             if(totalValue > 0){
                 dislikes = (totalLikes.length - totalValue)/2
                 likes = totalLikes.length - dislikes
@@ -174,7 +174,7 @@ class VideoShow extends React.Component {
             likeStyle = (likes/(likes+dislikes))*100
             dislikeStyle = (dislikes / (likes + dislikes)) * 100
         }
-        debugger
+        // debugger
         let uploadDate = this.formatDate(video.created_at)
         return(
             <div className="video-show-page">
