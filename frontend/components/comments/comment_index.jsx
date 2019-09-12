@@ -7,7 +7,6 @@ import CommentForm from './comment_form'
 
 
 const msp = (state) => {
-  //debugger
     let comments = Object.values(state.comments)
     return {
         comments: comments
@@ -24,7 +23,6 @@ const mdp = dispatch => {
 class CommentIndex extends React.Component{
 
     componentDidUpdate(prevProps){
-      //debugger
         if(this.props.comments.length !== prevProps.comments.length){
             let videoId = this.props.match.params.videoId
             this.props.getComments(videoId)
@@ -36,7 +34,6 @@ class CommentIndex extends React.Component{
         }
     }
     componentDidMount(){
-      //debugger
         let videoId = this.props.match.params.videoId
         this.props.clearComments();
         this.props.getComments(videoId)

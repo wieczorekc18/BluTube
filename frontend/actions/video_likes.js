@@ -7,7 +7,6 @@ export const CLEAR_LIKES = "CLEAR_LIKES"
 
 
 const receiveVideoLikes = (videoLikes) => {
-    // debugger
     return {
         type: RECEIVE_VIDEO_LIKES,
         videoLikes: videoLikes
@@ -15,7 +14,6 @@ const receiveVideoLikes = (videoLikes) => {
 }
 
 const receiveVideoLike = (videoLike) => {
-    // debugger
     return{
         type: RECEIVE_VIDEO_LIKE,
         videoLike: videoLike
@@ -23,7 +21,6 @@ const receiveVideoLike = (videoLike) => {
 }
 
 const removeVideoLike = (id) => {
-    // debugger
     return {
         type: REMOVE_VIDEO_LIKE,
         id: id,
@@ -41,7 +38,6 @@ export const getVideoLikes = (video_id) => dispatch => {
 }
 
 export const createVideoLike = (value, video_id) => dispatch => {
-    // debugger
     return LikeUtil.createVideoLike(value, video_id).then(like => dispatch(receiveVideoLike(like)))
 }
 

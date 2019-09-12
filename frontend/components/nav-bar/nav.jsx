@@ -4,6 +4,7 @@ import HomePartSide from './home_part_side';
 import HomeFullSide from './home_full_side';
 import AwayFullSide from './away_full_side';
 import { randomFill } from 'crypto';
+import SearchBar from '../search/searchbar'
 
 
 class Navbar extends React.Component {
@@ -137,9 +138,10 @@ class Navbar extends React.Component {
                             <img className="blutube-logo" src={window.blutubeLogoURL} alt="logo-here" />
                         </Link>
                     </li>
-                    <li className="logged-search-li"><input className="logged-search-bar" type="search" placeholder="Search" name="" id="" />
+                    {/* <li className="logged-search-li"><input className="logged-search-bar" type="search" placeholder="Search" name="" id="" />
                         
-                    </li>
+                    </li> */}
+                    <SearchBar className="logged-search-li" />
                     <li className="logged-right-nav-group"> 
                         <Link className="logged-upload-link" to="/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
                         {/* <i className="fa fa-th" aria-hidden="true"></i>
@@ -167,9 +169,9 @@ class Navbar extends React.Component {
                                 <img className="blutube-logo" src={window.blutubeLogoURL} alt="logo-here" />
                             </Link>
                         </li>
-                        <li className="search-li"><input className="search-bar" type="search" placeholder="Search" name="" id=""/>
-                            
-                        </li>
+                        {/* <li className="search-li"><input className="search-bar" type="search" placeholder="Search" name="" id=""/>
+                        </li> */}
+                        <SearchBar className="search-li"/>
                         <li className="right-nav-group">
                             <Link className="upload-link" to="/upload"><i className="fas fa-video" aria-hidden="true"></i></Link>
                             {/* <i className="fa fa-th" aria-hidden="true"></i>

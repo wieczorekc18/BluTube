@@ -1,6 +1,5 @@
 
 export const getComments = (video_id) => {
-  //debugger
     return(
         $.ajax({
             method: "GET",
@@ -11,7 +10,6 @@ export const getComments = (video_id) => {
 
 
 export const createComment = (body, video_id, parent_comment_id) => {
-    // debugger
     return(
         $.ajax({
             method: "POST",

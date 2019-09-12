@@ -28,6 +28,5 @@ export const getVideo = (id) => dispatch => {
 }
 
 export const postVideo = (formData) => dispatch => {
-    // debugger
     return VideoUtil.postVideo(formData).then(video => dispatch(receiveVideo(video)))
 }

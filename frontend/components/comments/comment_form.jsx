@@ -35,11 +35,8 @@ class CommentForm extends React.Component{
     }
 
     handleSubmit(e){
-        // debugger
         e.preventDefault();
-        // debugger
         if(this.props.currentUser){
-            // debugger
             this.props.createComment(this.state)
             this.setState({
                 body: "",

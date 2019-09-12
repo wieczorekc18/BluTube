@@ -1,5 +1,4 @@
 export const createVideoLike = (value, video_id) => {
-    // debugger
     return(
         $.ajax({
             method: "POST",
@@ -17,7 +16,6 @@ export const createVideoLike = (value, video_id) => {
 
 
 export const updateVideoLike = (id, video_id) => {
-    // debugger
     return(
         $.ajax({
             method: "PATCH",
@@ -34,7 +32,6 @@ export const updateVideoLike = (id, video_id) => {
 
 
 export const deleteVideoLike = (id, video_id) => {
-    // debugger 
     return (
         $.ajax({
             method: "DELETE",
@@ -44,7 +41,6 @@ export const deleteVideoLike = (id, video_id) => {
 }
 
 export const getVideoLikes = (video_id) => {
-    // debugger 
     return(
         $.ajax({
             method: "GET",

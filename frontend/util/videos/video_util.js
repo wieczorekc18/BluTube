@@ -18,7 +18,6 @@ export const getVideo = (id) => {
 }
 
 export const postVideo = (formData) => {
-    // debugger
     return (
         $.ajax({
             method: "POST",

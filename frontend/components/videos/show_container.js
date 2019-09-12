@@ -4,7 +4,6 @@ import { getVideo, getVideos } from '../../actions/videos'
 import {getVideoLikes, updateVideoLike, createVideoLike, deleteVideoLike, clearLikes} from '../../actions/video_likes'
 
 const msp = (state, ownProps) => {
-    // debugger
     let allVideos = Object.values(state.videos)
     let videoId = ownProps.match.params.videoId
     let video = state.videos[videoId]
@@ -12,7 +11,6 @@ const msp = (state, ownProps) => {
         return vid.id != videoId
     })
     let likes = Object.values(state.likes)
-    // debugger
     return {
         video: video,
         videos: videos,
