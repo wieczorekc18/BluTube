@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
 
     get '/session/check_email', :to => 'sessions#check_email', :defaults => { :format => 'json' }
+    get '/videos/search_results', :to => 'videos#search_results', :defaults => { :format => 'json' }
   end
 
 end

@@ -20,6 +20,12 @@ class Api::VideosController < ApplicationController
         end
     end
 
+    def search_results
+        # debugger
+        # lets come back to this
+        search = params[:search][:search]
+    end
+
     private
 
     def video_params

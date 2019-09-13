@@ -21,10 +21,27 @@ class SearchBar extends React.Component{
             search: ""
         }
         this.updateSearch = this.updateSearch.bind(this)
+        this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
+        this.handleSuggestion = this.handleSuggestion.bind(this)
     }
 
     updateSearch(e){
+        e.preventDefault()
         this.setState({ search: e.target.value });
+    }
+
+    handleSearchSubmit(e){
+        e.preventDefault()
+        debugger
+        if(this.state.search.length > 0){
+            // ajax
+        }
+    }
+
+    handleSuggestion(e){
+        debugger
+        e.preventDefault()
+        this.setState({ search: e.target.innerHTML });
     }
 
     render(){
@@ -37,7 +54,7 @@ class SearchBar extends React.Component{
             results = results.slice(0, 10)
             results = results.map(vid => {
                 return (
-                    <li className="suggestion" onClick={this.handleSuggestion}>{vid.title}</li>
+                    <li key={vid.id} className="suggestion" onClick={this.handleSuggestion}>{vid.title}</li>
                 )
             })
         }
@@ -46,7 +63,7 @@ class SearchBar extends React.Component{
         }
         return(
             <li>
-                <form className="search-form" action={this.handleSearchSubmit}>
+                <form className="search-form" onSubmit={this.handleSearchSubmit}>
                     <input className="logged-search-bar" type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch}/>
                     <button className="search-button"><i className="fas fa-search"></i></button>
                 </form>
