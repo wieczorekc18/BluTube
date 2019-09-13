@@ -26,12 +26,15 @@ export const ResultIndexItem = props => {
                     ALLLLL THIS NEEDS TO BE STYLED ANEW
                     */}
                     <div className="result-text-labels">
-                        <div>
+                        <div className="result-title">
                             {props.result.title}
                         </div>
-                        <div>
-                            {uploader.username}
+                        <div className="result-labels">
+                            {uploader.username} • {props.result.views} views • {uploadedAt}
                         </div>
+                        <p className="result-description">
+                            {props.result.description}
+                        </p>
                     </div>
                 </div>
             </Link>

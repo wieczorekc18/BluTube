@@ -1,0 +1,31 @@
+
+.result-index-item-container{
+    margin-top: 20px;
+}
+
+.result-index-item{
+    display: flex;
+}
+
+.result-title{
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.result-labels{
+    margin-top: 4px;
+    color: gray;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.result-text-labels{
+    margin-left: 10px;
+}
+
+.result-description{
+    margin-top: 8px;
+    color: gray;
+    font-family: sans-serif;
+    font-size: 12px;
+}
