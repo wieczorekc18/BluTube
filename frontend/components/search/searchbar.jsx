@@ -34,7 +34,7 @@ class SearchBar extends React.Component{
         e.preventDefault()
         debugger
         if(this.state.search.length > 0){
-            // ajax
+            this.props.getSearchResults(this.state.search)
         }
     }
 
@@ -61,8 +61,16 @@ class SearchBar extends React.Component{
         if (results && results.length > 0){
             className = "search-suggestions"
         }
+        $(document).on('click', e => {
+            if ($(e.target).closest(".search-container").length === 0) {
+                $(".search-suggestions").hide();
+            }
+        });
+        $('.search-container').click(() => {
+            $(".search-suggestions").show();
+        });
         return(
-            <li>
+            <li className="search-container">
                 <form className="search-form" onSubmit={this.handleSearchSubmit}>
                     <input className="logged-search-bar" type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch}/>
                     <button className="search-button"><i className="fas fa-search"></i></button>
