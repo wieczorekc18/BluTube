@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoIndexItem from './index_item'
+import { VideoIndexItem } from './index_item'
 import CommentIndex from '../comments/comment_index'
 import { Redirect } from 'react-router';
 

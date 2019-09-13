@@ -28,3 +28,14 @@ export const postVideo = (formData) => {
         })
     )
 }
+
+export const getSearchResults = (search) => {
+    debugger
+    return (
+        $.ajax({
+            method: "GET",
+            url: "/api/search_results",
+            data: { search },
+        })
+    )
+}

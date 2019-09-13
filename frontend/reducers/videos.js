@@ -4,10 +4,10 @@ import merge from "lodash/merge"
 
 const VideosReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
-
+    let newState
     switch(action.type){
         case RECEIVE_ALL_VIDEOS:
-            const newState = {};
+            newState = {};
             let allVids = Object.values(action.videos)
             allVids.forEach(video => {
                 newState[video.id] = video

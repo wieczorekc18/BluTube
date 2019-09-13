@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoIndexItem from './index_item'
+import { VideoIndexItem } from './index_item'
 
 
 class VideoIndex extends React.Component {

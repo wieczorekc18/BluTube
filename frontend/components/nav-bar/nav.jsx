@@ -25,7 +25,7 @@ class Navbar extends React.Component {
     }
 
     componentDidMount(){
-        this.props.location.pathname === "/" ? (
+        this.props.location.pathname === "/" || this.props.location.pathname.includes("/searchResults") ? (
             this.setState({
                 side: <HomeFullSide />
             })
@@ -76,7 +76,7 @@ class Navbar extends React.Component {
 
     hideFull(e) {
         e.preventDefault();
-        this.props.location.pathname === "/" ? (
+        this.props.location.pathname === "/" || this.props.location.pathname.includes("/searchResults") ? (
             this.setState({
                 side: < HomePartSide />
             }
@@ -91,7 +91,7 @@ class Navbar extends React.Component {
 
     showFull(e) {
         e.preventDefault();
-        this.props.location.pathname === "/" ? (
+        this.props.location.pathname === "/" || this.props.location.pathname.includes("/searchResults") ? (
             this.setState({
                 side: <HomeFullSide />
             }

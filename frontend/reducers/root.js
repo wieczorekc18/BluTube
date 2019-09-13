@@ -5,6 +5,7 @@ import SessionReducer from './session';
 import VideosReducer from "./videos";
 import CommentsReducer from './comments'
 import LikesReducer from './likes'
+import SearchReducer from './searches'
 
 const RootReducer = combineReducers({
     errors: ErrorsReducer,
@@ -12,6 +13,7 @@ const RootReducer = combineReducers({
     videos: VideosReducer,
     comments: CommentsReducer,
     likes: LikesReducer,
+    searched: SearchReducer,
 })
 
 export default RootReducer;

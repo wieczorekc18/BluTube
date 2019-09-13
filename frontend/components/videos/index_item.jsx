@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-function formatDate(ts = "naiufanweifuqnwpeifunqwpefiun"){
+export const formatDate = (ts = "naiufanweifuqnwpeifunqwpefiun") => {
     let uploadYear = ts.substr(0, 4);
     let uploadMonth = ts.substr(5, 2);
     let uploadDay = ts.substr(8, 2);
@@ -38,7 +38,7 @@ function formatDate(ts = "naiufanweifuqnwpeifunqwpefiun"){
 }
 
 
-const VideoIndexItem = props => {
+export const VideoIndexItem = props => {
     let uploadedAt = formatDate(props.video.created_at)
     let uploader;
     props.video.uploader ? uploader = props.video.uploader : uploader = {username: ""}
@@ -62,4 +62,3 @@ const VideoIndexItem = props => {
 };
 
 
-export default VideoIndexItem;

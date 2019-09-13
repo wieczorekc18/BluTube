@@ -1,8 +1,10 @@
 import React from 'react'
 import { withRouter } from "react-router";
 import { connect } from 'react-redux';
+import { getSearchResults } from '../../actions/videos'
 
 const msp = state => {
+    debugger
     return {
         videos: Object.values(state.videos), //important
     }
@@ -10,7 +12,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        // createComment: comment => dispatch(createComment(comment.body, comment.videoId, comment.parentCommentId))
+        getSearchResults: search => dispatch(getSearchResults(search))
     }
 }
 
@@ -34,7 +36,7 @@ class SearchBar extends React.Component{
         e.preventDefault()
         debugger
         if(this.state.search.length > 0){
-            this.props.getSearchResults(this.state.search)
+            return this.props.history.push(`/searchResults/${this.state.search}`)
         }
     }
 
