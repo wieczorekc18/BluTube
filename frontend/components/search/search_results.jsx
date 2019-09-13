@@ -7,7 +7,6 @@ class SearchResults extends React.Component{
     }
 
     componentDidUpdate(prevProps){
-        debugger
         if (prevProps.match.params.search !== this.props.match.params.search){
             this.props.getSearchResults(this.props.match.params.search)
         }
@@ -19,7 +18,6 @@ class SearchResults extends React.Component{
     }
 
     render(){
-        debugger
         let results = this.props.results.map(result => {
             return (<ResultIndexItem
                 key={`${result.id}`}

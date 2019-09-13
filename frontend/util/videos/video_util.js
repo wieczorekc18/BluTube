@@ -30,7 +30,6 @@ export const postVideo = (formData) => {
 }
 
 export const getSearchResults = (search) => {
-    debugger
     return (
         $.ajax({
             method: "GET",

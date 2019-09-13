@@ -12,7 +12,6 @@ const SearchReducer = (oldState = {}, action) => {
             searchedVids.forEach(video => {
                 newState[video.id] = video
             })
-            debugger
             return merge({}, newState)
         default:
             return oldState;

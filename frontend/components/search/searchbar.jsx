@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getSearchResults } from '../../actions/videos'
 
 const msp = state => {
-    debugger
     return {
         videos: Object.values(state.videos), //important
     }
@@ -34,14 +33,12 @@ class SearchBar extends React.Component{
 
     handleSearchSubmit(e){
         e.preventDefault()
-        debugger
         if(this.state.search.length > 0){
             return this.props.history.push(`/searchResults/${this.state.search}`)
         }
     }
 
     handleSuggestion(e){
-        debugger
         e.preventDefault()
         this.setState({ search: e.target.innerHTML });
     }

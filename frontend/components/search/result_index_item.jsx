@@ -7,7 +7,6 @@ export const ResultIndexItem = props => {
     let uploadedAt = formatDate(props.result.created_at)
     let uploader;
     props.result.uploader ? uploader = props.result.uploader : uploader = { username: "" }
-    debugger
     return (
         <div className="result-index-item-container">
             <Link to={`/videos/${props.result.id}`}>

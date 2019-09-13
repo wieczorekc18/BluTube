@@ -4,7 +4,6 @@ import { getSearchResults } from '../../actions/videos'
 
 
 const msp = state => {
-    debugger
     let results = Object.values(state.searched)
     return {
         results: results
