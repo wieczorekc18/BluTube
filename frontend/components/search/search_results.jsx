@@ -41,14 +41,12 @@ class SearchResults extends React.Component{
             />)
         })
         $(".fa-bars").off().on("click", () => {
-            debugger
             if(this.state.marg === "22%"){
                 this.setPart()
             }else{
                 this.setFull()
             }
         })
-        debugger
         let marg = {marginLeft: this.state.marg}
         return(
             <div>
