@@ -1,11 +1,16 @@
 .results-index{
-    width: 80%;
-    
+    width: 60vw;
+    /* margin-left: 22%; */
 }
 .result-index-item-container{
     margin-top: 20px;
-    margin-left: 29%;
+    /* margin-left: 27%; */
+    overflow: hidden;
 }
+
+/*
+    FIX STYLING
+*/
 
 .result-index-item{
     display: flex;
@@ -35,6 +40,7 @@
     font-size: 12px;
     word-break: break-all;
     height: 40px;
+    
 }
 
 .result-index-item-thumb{

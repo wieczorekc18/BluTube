@@ -63,7 +63,7 @@
     width: 20%;
     height: 100vh;
     margin-left: -3px;
-    margin-right: 35px;
+    margin-right: 0px;
 }
 
 .full-home-icon{
@@ -101,7 +101,7 @@
 }
 
 .home-part-side{
-    margin-right: 0%;
+    margin-right: 0px;
     float: left;
     background-color: rgb(241, 241, 241);
     width: 70px;

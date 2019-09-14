@@ -7,8 +7,9 @@ export const ResultIndexItem = props => {
     let uploadedAt = formatDate(props.result.created_at)
     let uploader;
     props.result.uploader ? uploader = props.result.uploader : uploader = { username: "" }
+    let className = props.className
     return (
-        <div className="result-index-item-container">
+        <div className={className}>
             <Link to={`/videos/${props.result.id}`}>
                 <div className="result-index-item">
                     <img className="result-index-item-thumb" src={props.result.thumb} alt="thumb here" />
