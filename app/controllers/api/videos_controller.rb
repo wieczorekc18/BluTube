@@ -22,7 +22,7 @@ class Api::VideosController < ApplicationController
 
     def search_results
         @search = params[:search]
-        @videos = Video.where("lower(title) LIKE ?", "%#{@search.downcase}%")
+        @videos = Video.where("lower(title) LIKE ?", "#{@search.downcase}%")
         render :index
     end
 

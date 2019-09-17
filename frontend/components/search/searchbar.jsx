@@ -48,7 +48,7 @@ class SearchBar extends React.Component{
         let className = "nothing-here"
         if(this.state.search.length > 0){
             results = this.props.videos.filter(video => {
-                return video.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+                return video.title.toLowerCase().indexOf(this.state.search.toLowerCase()) === 0;
             })
             results = results.slice(0, 10)
             results = results.map(vid => {
