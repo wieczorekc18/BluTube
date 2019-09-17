@@ -110,6 +110,10 @@
     text-align: center;
 }
 
+.horiz-l{
+    border-top: .5px solid rgb(190, 189, 189);
+}
+
 .part-home-icon{
     color: rgb(49, 92, 233);
     margin: 0 auto;

@@ -20,8 +20,14 @@ const AwayFullSide = () => {
                     <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
                         <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
                     </a>
+
+                    <hr className="horiz-l"/>
+
                     <a href="https://wieczorekc18.github.io/wieczorekc18/">
                         <div className="full-linkedin-away sidebar-hover"><i className="fas fa-user-tie full-away-linkedin-icon"></i>Personal Site</div>
+                    </a>
+                    <a href="https://angel.co/corey-wieczorek">
+                        <div className="full-linkedin-away sidebar-hover"><i className="fab fa-angellist full-away-linkedin-icon"></i>Angel List</div>
                     </a>
                 </div>
             </div>
@@ -33,8 +39,6 @@ const AwayFullSide = () => {
 }
 
 export default AwayFullSide;
-
-
 
 // {/* <div className="full-trending-icon"><i className="fas fa-fire"></i>Trending</div>
 // <div className="full-sub-icon"><img className="fa-sub" src="https://img.icons8.com/ios/50/000000/video-playlist.png" />Subscriptions</div>

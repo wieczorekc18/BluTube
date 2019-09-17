@@ -11,14 +11,22 @@ const HomePartSide = () => {
             <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
                 <div className="collapsed-linkedin-icon sidebar-hover"><i className="fab fa-linkedin"></i><br />LinkedIn</div>
             </a>
+
+            {/* <hr className="horiz-l" /> */}
+
             <a href="https://wieczorekc18.github.io/wieczorekc18/">
                 <div className="collapsed-linkedin-icon sidebar-hover"><i className="fas fa-user-tie"></i><br />Personal Site</div>
             </a>
+            <a href="https://angel.co/corey-wieczorek">
+                <div className="collapsed-linkedin-icon sidebar-hover"><i className="fab fa-angellist"></i><br />Angel List</div>
+            </a>
+            
         </div>
     )
 }
 
 export default HomePartSide;
+
 
 
 // {/* <div className="collapsed-trending-icon"><i className="fas fa-fire"></i>Trending</div>
