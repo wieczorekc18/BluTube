@@ -20,7 +20,9 @@ const AwayFullSide = () => {
                     <a href="https://www.linkedin.com/in/corey-wieczorek-16a635121/">
                         <div className="full-linkedin-away sidebar-hover"><i className="fab fa-linkedin full-away-linkedin-icon"></i>LinkedIn</div>
                     </a>
-                    
+                    <a href="https://wieczorekc18.github.io/wieczorekc18/">
+                        <div className="full-linkedin-away sidebar-hover"><i className="fas fa-user-tie full-away-linkedin-icon"></i>Personal Site</div>
+                    </a>
                 </div>
             </div>
             <div className="faded-black-background">
